@@ -1,0 +1,276 @@
+/** Portfolio - Garabedium - Custom  **/
+html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+	padding-top: 93px; // Header offset
+	margin: 0 0 35px 0; // Footer offset
+	@include breakpoint (small only) {
+		padding-top: 75px;
+	}
+}
+header#nav {
+	background: rgba(255,255,255,.95);
+	border-top: solid 5px $primary-color;
+	border-bottom: solid 1px #eeeeee;
+	text-align: center;
+	padding-bottom: 15px;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	nav {
+		font-family: 'Muli';
+		font-size: 20px;
+		li {
+			&:last-of-type {
+				margin-right: 0; // make sure nav centers
+			}
+			@include breakpoint (300px down){
+				margin-right: .2rem;
+			}
+			&#logo {
+				a {
+					background-color: #d0863e;
+					color: $white;
+					font-size: 32px;
+					padding: 0px 10px 10px;
+					border-bottom: solid 5px $primary-color;
+					&:hover {
+						text-shadow: 1px 1px 0 $black;
+					}
+				}
+			}
+			a {
+				color: $black;
+				&:hover {
+					color: lighten($black, 20%);
+				}
+				&:active {
+					color: $primary-color;
+				}
+				@include breakpoint (300px down){
+					font-size: 16px;
+				}
+			}
+		}
+	}
+	&.scroll {
+		padding: 0;
+		border-bottom: solid 1px darken(#eeeeee, 20%);
+		nav li#logo a {
+			font-size: 26px;
+		}
+		nav li a {
+			font-size: 16px;
+			padding-bottom: 3px
+		}
+	}
+} //end:header
+// main content
+main {
+	// common header styles
+	header {
+		text-align: center;
+		h1, h2 {
+			font-family: 'Lato';
+			//font-weight: 700;
+		}
+		h1 {
+			span {
+				color: #0096ff;
+			}
+		}
+		h2 {
+			span {
+				color: #a6a6a6;
+			}
+		}
+	}
+	ul {
+		font-weight: 300;
+	}
+	//Homepage
+	&.home {
+		text-align: center;
+		.intro {
+			font-size: 24px;
+			font-weight: 300;
+			margin: 15px 0 40px 0;
+			@include breakpoint(small only){
+				font-size: 20px;
+			}
+		}
+	}
+	//Portfolio
+	&.portfolio {
+		article.project {
+			margin-bottom: 2.5em;
+			@include breakpoint(small only){
+				border-bottom: solid 4px $light-gray;
+			}
+			h2 {
+				font-size: 1.5rem;
+				margin-bottom: .75rem;
+				@include breakpoint (850px down){
+					font-size: 1.25rem;
+					margin-bottom: 0;
+				}
+				@include breakpoint(small down){
+					display: none;
+				}
+			}
+			h3 {
+				font-size: 1.3rem;
+				@include breakpoint(medium only){
+					margin-bottom: .2rem;
+					font-size: 1rem;
+				}
+
+			}
+			.button {
+				@include border-radius (0px);
+				margin-bottom: 0;
+				@include breakpoint(medium only){
+					width: 100%;
+				}
+			}
+			ul {
+				font-size: 1.1rem;
+				@include breakpoint(medium only){
+					margin-bottom: .5rem;
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+				}
+				@include breakpoint(850px down){
+					font-size: 1rem;
+				}
+			}
+			&.amobikes {
+				img {
+					border: solid 6px $tertiary-color;
+				}
+				.button{
+					background-color: lighten($tertiary-color, 10%);
+				}
+				h2 {
+					color: $tertiary-color;
+				}
+			}
+			&.dandara {
+				img {
+					border: solid 6px $dandara-color;
+				}
+				.button {
+					background-color: lighten($dandara-color, 10%);
+				}
+				h2 {
+					color: $dandara-color;
+				}
+			}
+			&.fteleaders {
+				img {
+					border: solid 6px $fteleaders-color;
+				}
+				.button {
+					background-color: lighten($fteleaders-color, 10%);
+				}
+				h2 {
+					color: $fteleaders-color;
+				}
+			}
+			&.sampahousing {
+				img {
+					border: solid 6px $sampahousing-color;
+				}
+				.button {
+					background-color: lighten($sampahousing-color, 15%);
+					color: $black;
+				}
+				h2 {
+					color: darken($sampahousing-color, 20%);
+				}
+			}
+			&.akc {
+				img {
+					border: solid 6px $akc-color;
+				}
+				.button {
+					background-color: lighten($akc-color, 10%);
+				}
+				h2 {
+					color: $akc-color;
+				}
+			}
+		}
+	}
+	// Resume
+	&.resume {
+		.summary {
+			margin-bottom: 30px;
+			font-weight: 300;
+			font-size: 20px;
+			@include breakpoint(small only){
+				font-size: 18px;
+			}
+		}
+		.item {
+			margin-bottom: 40px;
+			h2 {
+				font-size: 1.3rem;
+				margin-bottom: 0;
+			}
+			h3 {
+				font-size: .9rem;
+				font-style: italic;
+				font-weight: 400;
+			}
+			header {
+				padding: 5px 0;
+				margin-bottom: 15px;
+				border-top: solid 4px $light-gray;
+				border-bottom: solid 4px $light-gray;
+				&.present {
+					border-top: solid 4px $tertiary-color;
+					border-bottom: solid 4px $tertiary-color;
+				}
+				h4 {
+					font-size: 16px;
+					margin-bottom: 0;
+				}
+			}
+		} //end:item
+	}
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	// Not a good practice to set explicit height, however, footer here is super simple. Set via JS later
+	height: 35px;
+	text-align: center;
+	border-bottom: solid 5px $primary-color;
+} //end:footer
+// Utility
+.button {
+	// shared button styles
+	font-weight: 700;
+	&.resume {
+		background: $tertiary-color;
+		&:hover {
+			background-color: scale-color($tertiary-color, $lightness: -15%);
+		}
+	}
+}
+.inline {
+	li {
+		display: inline-block;
+		margin-right: 1rem;
+	}
+}
+// Transition elements
+header#nav, header#nav nav li#logo a, header#nav.scroll, header#nav.scroll nav li#logo a, header#nav.scroll nav li a { transition: all .5s ease; }
+
