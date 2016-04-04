@@ -32,7 +32,7 @@ $(document).ready(function() {
 				"tools": ["Git","Gulp","Grunt","Sublime Text"]
 			},
 		"welcomeMessage" : "<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
-		"biopic" : "https://pixabay.com/static/uploads/photo/2016/03/13/03/37/hot-air-balloons-1253229_960_720.jpg",
+		//"biopic" : "https://pixabay.com/static/uploads/photo/2016/03/13/03/37/hot-air-balloons-1253229_960_720.jpg",
 		"contacts":
 		{
 			"mobile": "tel:+55.11.96026.5146",
@@ -46,7 +46,6 @@ $(document).ready(function() {
 			var bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
 			var bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 			var bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
-			//$("#header").prepend(bioName, bioRole, bioMsg, bioPic);
 
 			$("#title").append(bioName);
 			$("#summary").prepend(bioMsg);
@@ -114,11 +113,8 @@ $(document).ready(function() {
 				var workTitle = HTMLworkTitle.replace("%data%", job.title);
 				var workLocation = HTMLworkLocation.replace("%data%", job.location);
 				var workDates = HTMLworkDates.replace("%data%", job.dates);
-				//var workDescription = HTMLworkDescription.replace("%data%", job.description);
 
 				workEntry.append(workDates, workLocation, workEmployer, workTitle);
-
-	 			//if (job.description.length > 0){
 
 					workEntry.append(HTMLworkDescriptionStart);
 
@@ -126,8 +122,6 @@ $(document).ready(function() {
 						var descriptionItem = HTMLworkDescription.replace("%data%", item);
 						$(".description-items:last").append(descriptionItem);
 					});
-				//}
-
 			});
 		}
 	}; work.display();
@@ -287,4 +281,3 @@ $(document).ready(function() {
 	}; projects.display();
 
 $("#mapDiv").append(googleMap);
-
