@@ -24,7 +24,7 @@ $(document).ready(function() {
  	var bio = {
 		"name": "Greg",
 		"role": "Web Developer",
-		"skills": 
+		"skills":
 			{
 				"languages": ["HTML5","CSS3","SASS","jQuery","Javascript"],
 				"frameworks": ["Foundation","Bootstrap"],
@@ -176,7 +176,7 @@ $(document).ready(function() {
 
 				var educationEntry = $('.education-entry:last');
 
-				var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+				var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("%link%", education.schools[school].url);
 				var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree) + HTMLschoolMajor.replace("%data%", education.schools[school].major);
 				var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 				var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
@@ -192,8 +192,8 @@ $(document).ready(function() {
 
 			    var educationEntry = $('.education-entry:last');
 
-			    var courseSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school).replace("#", education.onlineCourses[course].url);
-			    var courseTitle = HTMLonlineCourse.replace("%data%", education.onlineCourses[course].title).replace("#", education.onlineCourses[course].courseURL);
+			    var courseSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school).replace("%link%", education.onlineCourses[course].url);
+			    var courseTitle = HTMLonlineCourse.replace("%data%", education.onlineCourses[course].title).replace("%link%", education.onlineCourses[course].courseURL);
 			    var courseDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
 				//var courseURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 			    educationEntry.append(courseSchool, courseTitle, courseDates);
@@ -242,7 +242,7 @@ $(document).ready(function() {
 		"display": function(){
 
 			for(project in projects.projects){
-				
+
 				var projectEntry = HTMLprojectStart.replace("%class%", projects.projects[project].titleShort);
 				$("main.portfolio section").append(projectEntry);
 				$(".project:last").append(HTMLprojectContent);
@@ -253,7 +253,7 @@ $(document).ready(function() {
 
 				// Project Role
 				if ( projects.projects[project].role.length > 0 ){
-					
+
 					$(".project-content:last").append(HTMLprojectRole, HTMLprojectRoleStart);
 
 					projects.projects[project].role.forEach(function(item){
@@ -263,9 +263,9 @@ $(document).ready(function() {
 
 				}
 
-				// Project Highlights 
+				// Project Highlights
 				if ( projects.projects[project].highlights.length > 0 ){
-					
+
 					$(".project-content:last").append(HTMLprojectHighlights, HTMLprojectHighlightsStart);
 
 					projects.projects[project].highlights.forEach(function(item){

@@ -40,15 +40,15 @@ var HTMLworkDescriptionStart = '<ul class="description-items"></ul>';
 var HTMLworkDescription = '<li>%data%</li>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<h2><a href="#">%data%</a></h2>';
+var HTMLschoolName = '<h2><a href="%link%" target="_blank">%data%</a></h2>';
 var HTMLschoolDegree = '<h3>%data%, ';
 var HTMLschoolMajor = '%data%</h3>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text float-right">%data%</div>';
 
 var HTMLonlineClasses = '<h2>Online Classes</h2>';
-var HTMLonlineSchool = '<h2><a href="#" target="_blank">%data%</a></h2>';
-var HTMLonlineCourse = '<a href="#" target="_blank">%data%</a>';
+var HTMLonlineSchool = '<h2><a href="%link%" target="_blank">%data%</a></h2>';
+var HTMLonlineCourse = '<a href="%link%" target="_blank">%data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 //var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
