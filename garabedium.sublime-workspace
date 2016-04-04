@@ -1,0 +1,845 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1884,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "portfolio.html",
+			"settings":
+			{
+				"buffer_size": 7264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 730,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/scss/js/app.js",
+			"settings":
+			{
+				"buffer_size": 6991,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/scss/scss/_custom.scss",
+			"settings":
+			{
+				"buffer_size": 5779,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/resumeBuilder.js",
+			"settings":
+			{
+				"buffer_size": 5965,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/helper.js",
+			"settings":
+			{
+				"buffer_size": 9177,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 333.0,
+		"last_filter": "preferences",
+		"selected_items":
+		[
+			[
+				"preferences",
+				"Preferences: Settings - User"
+			],
+			[
+				"package control install",
+				"Package Control: Install Package"
+			],
+			[
+				"package control",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"expressionen",
+				"Set Syntax: ExpressionEngine"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"express",
+				"Set Syntax: ExpressionEngine"
+			],
+			[
+				"expressione",
+				"Set Syntax: ExpressionEngine"
+			],
+			[
+				"",
+				"Clipboard Manager: Show History"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"unor",
+				"Snippet: unordered-list"
+			],
+			[
+				"lorem",
+				"Snippet: lorem-ipsum-text"
+			],
+			[
+				"border radius",
+				"Snippet: CSS for border radius."
+			],
+			[
+				"border raius",
+				"Snippet: CSS for border radius."
+			],
+			[
+				"save",
+				"Project: Save As"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"open",
+				"View: Toggle Open Files in Side Bar"
+			]
+		],
+		"width": 431.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/greg/Sites/garabedium",
+		"/Users/greg/Sites/garabedium/assets",
+		"/Users/greg/Sites/garabedium/assets/js",
+		"/Users/greg/Sites/garabedium/assets/scss",
+		"/Users/greg/Sites/garabedium/assets/scss/js",
+		"/Users/greg/Sites/garabedium/assets/scss/js/min",
+		"/Users/greg/Sites/garabedium/dist",
+		"/Users/greg/Sites/garabedium/dist/js"
+	],
+	"file_history":
+	[
+		"/Users/greg/Sites/garabedium/resume.html",
+		"/Users/greg/Sites/garabedium/resume2.html",
+		"/Users/greg/Sites/garabedium/assets/scss/js/app.js",
+		"/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/greg/Sites/garabedium/config.codekit",
+		"/Users/greg/Sites/jts/prophets/prophets.sublime-project",
+		"/Users/greg/Downloads/chrome/Lesson 2 Subtitles/02 - What Makes a Repository a Repository.srt",
+		"/Users/greg/Documents/personal/Studies/udacity/FEND/udacity-fend-git.rtf",
+		"/Users/greg/Desktop/test.html",
+		"/Users/greg/Sites/garabedium-dev/angular/index.html",
+		"/Users/greg/Sites/garabedium-dev/angular/angular-app.js",
+		"/Users/greg/Documents/personal/Studies/codeschool/ANGULAR/angular-app.js",
+		"/Users/greg/Sites/garabedium-dev/index.html",
+		"/Users/greg/Documents/personal/Studies/codeschool/ANGULAR/learn-angular.html",
+		"/Users/greg/Documents/clients/beekeeper group/TerraPower/backups/db/dev_terrapower_ee-5-2-13.sql",
+		"/Users/greg/Sites/sampahousing/sampa-corretores/corretores/asts/_foundation/config.codekit",
+		"/Users/greg/Sites/jts/aeras/site-ee/config/config.env.php",
+		"/Users/greg/Sites/jts/aeras/site-ee/config/config.master.php",
+		"/Users/greg/Sites/jts/aeras/site-ee/config/config.local.php",
+		"/Users/greg/Downloads/chrome/ee-master-config-master/readme.textile",
+		"/Users/greg/Documents/clients/sampahousing/api/ZAP - Integration Format/ZapProject.exe",
+		"/Users/greg/Documents/clients/sampahousing/api/ZAP - Integration Format/ZapProject.exe.config",
+		"/Users/greg/Sites/jts/prophets/site-wp/wordpress/wp-content/themes/timber/views/home.twig",
+		"/Users/greg/Downloads/chrome/Coda EE2.sss",
+		"/Users/greg/Sites/jts/prophets/timber/home.php",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/component/_rotator.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/partials/_mixins.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/partials/_footer.scss",
+		"/Users/greg/Sites/jts/prophets/site-wp/config/config.local.php",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/component/_type.scss",
+		"/Users/greg/Sites/jts/prophets/timber/views/layout.twig",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/_custom.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/modules/_breakpoints.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/js/nav.js",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/partials/_header.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/component/_custom.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/_normalize.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/js/main.js",
+		"/Users/greg/Sites/jts/prophets/timber/assets/js/home-rotate.js",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/partials/_interior.scss",
+		"/Users/greg/Sites/jts/prophets/timber/views/prophet.twig",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/screen.scss",
+		"/Users/greg/Sites/jts/prophets/timber/page-become-a-digital-prophet.php",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/partials/_extends.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/js/tooltip.js",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/partials/_home.scss",
+		"/Users/greg/Sites/jts/prophets/timber/assets/scss/component/_form.scss",
+		"/Users/greg/Sites/jts/prophets/site-wp/config/config.master.php",
+		"/Users/greg/Sites/jts/prophets/package.json",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/config/config.master.php",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/js/forms.js",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/views/home.twig",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/views/prophet.twig",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/page-become-a-digital-prophet.php",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/page-home.php",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/home.php",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/views/layout.twig",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/js/nav.js",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/partials/_header.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/themes/timber/views/form.twig",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/themes/timber/page-form.php",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/views/form.twig",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/_custom.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/component/_form.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/partials/_interior.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/partials/_home.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/modules/_triangle.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/component/_type.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/modules/_breakpoints.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/partials/_footer.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/component/_rotator.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/js/tooltip.js",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/themes/timber/assets/js/tooltip.js",
+		"/Users/greg/Documents/web/JQuery/tooltip/custom-tooltip.js",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/dist/js/index.js",
+		"/Users/greg/Documents/web/JQuery/tooltip/custom-tooltip",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/page.php",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/_foundation.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/js/nav-scroll.js",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/partials/_extends.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/partials/_icons.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/themes/timber/assets/scss/partials/_extends.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/assets/scss/partials/_mixins.scss",
+		"/Users/greg/Sites/jts/aeras/site-ee/scss/_custom.scss",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/views/page.twig",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/themes/timber/assets/js/nav-scroll.js",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/views/dev.twig",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/dev.php",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/plugins/timber-library/functions/cache/CacheExtension/CacheStrategy/KeyGeneratorInterface.php",
+		"/Users/greg/Sites/jts/apt1-prophets/package.json",
+		"/Users/greg/Sites/jts/apt1-prophets/.editorconfig",
+		"/Users/greg/Sites/jts/apt1-prophets/timber/index.php",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/themes/timber/assets/scss/partials/.editorconfig",
+		"/Users/greg/Sites/jts/apt1-prophets/site-wp/wordpress/wp-content/themes/timber/views/home.twig",
+		"/Users/greg/Downloads/chrome/Twig-HTML.mode-master/README.markdown",
+		"/Users/greg/Sites/jts/aptone/bubs.sublime-project",
+		"/Users/greg/Downloads/chrome/johndwells-Minimee-c8f70d9/README.md",
+		"/Applications/MAMP/tmp/mysql/my.cnf",
+		"/Users/greg/Sites/terrapower/admincp/expressionengine/third_party/switchee/README.md",
+		"/Users/greg/Downloads/chrome/croxton-Switchee-c4a8e26/README.md",
+		"/Users/greg/Downloads/chrome/stash-2.5.2/README.md",
+		"/Users/greg/Sites/terrapower/public_html/themes/cp_themes/sassy_cp/README.md",
+		"/Users/greg/Sites/terrapower/admincp/expressionengine/third_party/entry_type/README.markdown",
+		"/Users/greg/Sites/Juking the Stats/aeras/site-ee/readme.md",
+		"/Users/greg/Documents/web/_expression-engine/ee plugins-extensions/category-field-1.5.5/README.md",
+		"/Users/greg/Documents/clients/trumedia/Leadercast/shorteen/README.md",
+		"/Users/greg/Documents/web/_expression-engine/ee plugins-extensions/mx-title-control-master/README.md",
+		"/Users/greg/Documents/clients/TruMedia/Leadercast/live/system/expressionengine/third_party/entry_type/README.markdown",
+		"/Users/greg/Downloads/chrome/Coda-Bootstrap-3-Clips-master/README.md",
+		"/Users/greg/Downloads/chrome/grouper/README.md",
+		"/Users/greg/Documents/web/_expression-engine/ee-default-deploy/config-focus-master-config/readme.textile",
+		"/Users/greg/Downloads/chrome/ee1-data.json",
+		"/Users/greg/Downloads/chrome/silviomoreto-bootstrap-select-9656fcf/README.md",
+		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-machform-website-styles.css",
+		"/Users/greg/Documents/web/_expression-engine/ee plugins-extensions/reelocate-master/README.md",
+		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-machform-facebook-styles.css",
+		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-bookt-custom.css",
+		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/css/bootstrap.css",
+		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/html/blog.html",
+		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/css/styles.css",
+		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/html/blog-entry.html",
+		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-machform-website.css",
+		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/css/styles-index.css",
+		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/html/index.html",
+		"/Users/greg/Documents/web/_expression-engine/ee plugins-extensions/Maps-141/README.md",
+		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/img/akc-humane-fund-image-sprites.png",
+		"/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/unordered-list.sublime-snippet",
+		"/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/lorem-ipsum-text.sublime-snippet"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 223.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".contact-info",
+			"roarange",
+			"schools",
+			"location.",
+			"mapDiv",
+			"sao paulo",
+			"location",
+			"googleMap",
+			"clone",
+			"‘",
+			"’",
+			"2.",
+			"version",
+			"index.php",
+			"local",
+			"folder",
+			"local",
+			"areas",
+			"'ga",
+			"ie",
+			"tablet-portrait",
+			"fill=\"none\" ",
+			"id=\"",
+			"fill=\"none\"",
+			"(t",
+			"(T",
+			"400",
+			".nav",
+			"testimonialfquote",
+			"testimonial",
+			"img",
+			".logo",
+			"placeholder",
+			"opacity",
+			"count",
+			"label",
+			"digital prophets network is your",
+			"is your gateway",
+			"services",
+			".services",
+			"what-we-do",
+			"how-we-do-it",
+			"thank you",
+			"first-of-type",
+			"question-cont",
+			"clients",
+			"who-we-are",
+			"section",
+			"sans-",
+			"$",
+			"nan",
+			"become",
+			"become a prophet",
+			"label",
+			"nav",
+			"gravity_form",
+			"mobile-",
+			"desciption",
+			"first-of",
+			"description",
+			"contact",
+			"show-for",
+			"portrait",
+			"orientation",
+			"section",
+			"file",
+			"section-highli",
+			"section-highlith",
+			"description",
+			"section-highlight",
+			"what-we-do",
+			"starburst",
+			"show-for-small",
+			"src",
+			".src",
+			"img",
+			"magenta",
+			"class=\"map-poly\"",
+			"first-of-typ",
+			";\n",
+			"@",
+			"tablet",
+			"hide-for",
+			"fill=\"none\"",
+			"areas",
+			"tooltip",
+			"*",
+			"nth",
+			"ccc",
+			"interactive-starburst",
+			"    ",
+			"executive placement",
+			"get started",
+			"it's easy to get",
+			"clients",
+			".back",
+			"<h3>",
+			"submit",
+			"clients",
+			"2AC92F_2_0.eot",
+			"advisory ",
+			"executive placement",
+			"clients",
+			"icons",
+			"sans-medium-title",
+			"-right",
+			"name=\"",
+			"name==\"",
+			"colored",
+			"- ",
+			"collapse",
+			"clients",
+			"whowe are",
+			"$sans-black-sentence",
+			"$sans-black-caps",
+			"$sans-medium-sentence",
+			"$sans-medium-title",
+			"$sans-black-caps",
+			"$sans-black-sentence",
+			"$sans-medium-sentence",
+			"sans-medium-title",
+			"utility",
+			"btn-translate",
+			"sampa-benefits",
+			"height=\"200\"",
+			"width=\"300\" ",
+			"aside.right",
+			"date p span"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"'",
+			"",
+			"id=\"fill-",
+			"",
+			"sans-medium",
+			"<li>",
+			"- ",
+			"<li>",
+			"$sans-black",
+			"$sans-medium",
+			"$sans-black",
+			"$sans-medium",
+			"sans-medium",
+			"",
+			"width=\"200\"",
+			"aside.top-stories",
+			"",
+			"</h5>",
+			"<h5>",
+			"",
+			"col-md-8",
+			"\ncol-md-8",
+			"",
+			"col-md-3",
+			"left: 25px",
+			"-webkit-font-smoothing: antialiased;",
+			"4\"",
+			"",
+			"/*-webkit-font-smoothing: antialiased;*/",
+			"col-md-6 col-md-offset-3",
+			"col-md-offset-1",
+			"offset-2",
+			"col-md-3 col-md-offset2",
+			"col-md-3",
+			"col-sm-3",
+			"col-md-3",
+			"col-md-",
+			"col-sm-4",
+			"col-sm-3",
+			"col-md-3"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								726,
+								726
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 341.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "portfolio.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4608,
+								4608
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								635,
+								635
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "assets/scss/js/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "assets/scss/scss/_custom.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4559,
+								4559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3474.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "assets/js/resumeBuilder.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5965,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3722,
+								2410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1095.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "assets/js/helper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9177,
+								9177
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3151.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clipboard_manager":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "garabedium.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"app.js",
+				"assets/scss/js/app.js"
+			],
+			[
+				"custom.",
+				"assets/scss/scss/_custom.scss"
+			],
+			[
+				"resume2.",
+				"resume2.html"
+			],
+			[
+				"helper",
+				"assets/js/helper.js"
+			],
+			[
+				"resume.html",
+				"resume.html"
+			],
+			[
+				"",
+				"~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Sites/jts/apt1-prophets/prophets.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 232.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -32,7 +32,7 @@ header#nav {
 			}
 			&#logo {
 				a {
-					background-color: #d0863e;
+					background-color: $roarange;
 					color: $white;
 					font-size: 32px;
 					padding: 0px 10px 10px;
@@ -208,7 +208,14 @@ main {
 	}
 	// Resume
 	&.resume {
-		.summary {
+		#title {
+			h2 {
+				font-style: italic;
+				font-size: 1rem;
+				font-weight: 400;
+			}
+		}
+		#summary {
 			margin-bottom: 30px;
 			font-weight: 300;
 			font-size: 20px;
@@ -221,6 +228,9 @@ main {
 			h2 {
 				font-size: 1.3rem;
 				margin-bottom: 0;
+				a {
+					color: scale-color( $roarange, $lightness: 10% );
+				}
 			}
 			h3 {
 				font-size: .9rem;
@@ -241,7 +251,44 @@ main {
 					margin-bottom: 0;
 				}
 			}
+			.location-text {
+				font-size: 13px;
+				font-style: italic;
+			}
+			&:last-child {
+				margin-bottom: 15px;
+			}
+			&#skills {
+				#skills-list {
+					li {
+						span {
+							font-weight: 700;
+							text-transform: capitalize;
+						}
+					}
+				}
+			}
+			&#education {
+				.education-entry {
+					margin-bottom: 15px;
+					h3 {
+						margin-bottom: 0;
+					}
+					.date-text {
+						font-size: 13px;
+					}
+				}
+
+			}
 		} //end:item
+	}
+}
+#mapDiv {
+	height: 400px;
+	width: 100%;
+	#map {
+		display: block;
+		height: 100%;
 	}
 }
 footer {
@@ -253,6 +300,15 @@ footer {
 	height: 35px;
 	text-align: center;
 	border-bottom: solid 5px $primary-color;
+	.contact {
+		.contact-info {
+			li {
+				&:last-child {
+					display: none;
+				}
+			}
+		}
+	}
 } //end:footer
 // Utility
 .button {
@@ -266,6 +322,7 @@ footer {
 	}
 }
 .inline {
+	margin: 0;
 	li {
 		display: inline-block;
 		margin-right: 1rem;

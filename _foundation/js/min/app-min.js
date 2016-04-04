@@ -1,2 +1,0 @@
-$(document).ready(function(){$(window).scroll(function(){var o=$("header#nav"),l=o.outerHeight()+25;$(window).scrollTop()>l?o.addClass("scroll"):o.removeClass("scroll")})});
-//# sourceMappingURL=./app-min.js.map
