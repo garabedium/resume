@@ -1,4 +1,4 @@
-//$(document).foundation();
+// Custom JS
 $(document).ready(function() {
 
 	// Animate header on scroll
@@ -13,9 +13,6 @@ $(document).ready(function() {
 			header.removeClass('scroll');
 		}
 	});
-
-	// Testing:
-	//var footer = $('footer').outerHeight();
 
 }); // end - doc ready
 
@@ -32,7 +29,7 @@ $(document).ready(function() {
 				"tools": ["Git","Gulp","Grunt","Sublime Text"]
 			},
 		"welcomeMessage" : "<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
-		//"biopic" : "https://pixabay.com/static/uploads/photo/2016/03/13/03/37/hot-air-balloons-1253229_960_720.jpg",
+		"biopic" : "/assets/images/greg.jpg",
 		"contacts":
 		{
 			"mobile": "tel:+55.11.96026.5146",
@@ -47,7 +44,7 @@ $(document).ready(function() {
 			var bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 			var bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
 
-			$("#title").append(bioName);
+			$("#title").append(bioPic, bioName);
 			$("#summary").prepend(bioMsg);
 
 			if ( Object.keys(bio.contacts).length > 0 ){
@@ -149,7 +146,7 @@ $(document).ready(function() {
 				"location": "Stellenbosch, South Africa",
 				"degree": "NA",
 				"major": "Political Science",
-				"dates": 2007,
+				"dates": "2006 - 2007",
 				"url":"http://www.sun.ac.za/"
 			}
 		],
@@ -157,7 +154,7 @@ $(document).ready(function() {
 			{
 				"school": "Udacity",
 				"title": "Front-End Web Developer Nanodegree (FEND)",
-				"dates": 2016,
+				"dates": "2016",
 				"url": "http://udacity.com/",
 				"courseURL": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 			}
@@ -174,7 +171,6 @@ $(document).ready(function() {
 				var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree) + HTMLschoolMajor.replace("%data%", education.schools[school].major);
 				var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 				var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-				//var schoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 
 				educationEntry.append(schoolLocation, schoolName, schoolDegree, schoolDates);
 			}
@@ -198,38 +194,48 @@ $(document).ready(function() {
 	var projects = {
 		"projects": [
 		{
-			"title": "AmoBikes",
-			"titleShort":"amobikes", // used for article class and images
-			"role": ["Design","Front-end development Foundation 5"],
-			"highlights":["Splash site for personal biking project in Brazil.","AJAX form submission","Mailchimp integration"],
-			"url":"http://amobikes.com/"
-		},
-		{
 			"title": "Dandara Careers",
-			"titleShort":"dandara", // used for article class and images
+			"images": ["/assets/images/project-dandara","/assets/images/project-dandara-1","/assets/images/project-dandara-2","/assets/images/project-dandara-3"],
+			"dates": "2014",
+			"titleShort":"dandara",
 			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://killerbyt.es/' target='_blank' title='KillerBytes'>KillerBytes</a>"],
-			"highlights":["Careers site where users can search for and apply for jobs","Search by categories"],
+			"description":["Careers site where users can search for and apply for jobs","Search by categories"],
 			"url":"http://dandaracareers.com/"
 		},
 		{
 			"title": "FTE Leaders",
-			"titleShort":"fteleaders", // used for article class and images
+			"images": ["/assets/images/project-fteleaders","/assets/images/project-fteleaders-1","/assets/images/project-fteleaders-2","/assets/images/project-fteleaders-3"],
+			"dates": "2013",
+			"titleShort": "fteleaders",
 			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://trumedia.io/' target='_blank'>TruMedia</a>"],
-			"highlights":["Large site with diverse templates","Faceted category search","Custom events template with Google Maps integration"],
+			"description":["Large site with diverse templates","Faceted category search","Custom events template with Google Maps integration"],
 			"url":"http://fteleaders.org/"
 		},
 		{
 			"title": "AKC Humane Fund",
-			"titleShort":"akc", // used for article class and images
+			"images": ["/assets/images/project-akc","/assets/images/project-akc-1","/assets/images/project-akc-2"],
+			"dates": "2013",
+			"titleShort": "akc",
 			"role": ["ExpressionEngine integration","Front-end development + Bootstrap"],
-			"highlights":["Donation site for American Kennel Club","Blog with Disqus comments"],
+			"description":["Donation site for American Kennel Club","Blog with Disqus comments"],
 			"url":"http://akchumanefund.org/"
 		},
 		{
+			"title": "AmoBikes",
+			"images": ["/assets/images/project-amobikes"],
+			"dates": "2016",
+			"titleShort":"amobikes", // used for article class and images
+			"role": ["Design","Front-end development + Foundation 5"],
+			"description":["Splash site for personal biking project in Brazil.","AJAX form submission","Mailchimp integration"],
+			"url":"http://amobikes.com/"
+		},
+		{
 			"title": "Sampa Corretores",
-			"titleShort":"sampahousing", // used for article class and images
+			"images": ["/assets/images/project-sampahousing","/assets/images/project-sampahousing-1","/assets/images/project-sampahousing-2"],
+			"dates": "2015",
+			"titleShort": "sampahousing",
 			"role": ["Design","ExpressionEngine integration","Front-end development + Foundation 5"],
-			"highlights":["Realtors can register and manage properties","Admins can approve or deny property listings"],
+			"description":["Realtors can register and manage properties","Admins can approve or deny property listings"],
 			"url":"http://contact.sampahousing.com/corretores/"
 		}
 	],
@@ -258,26 +264,41 @@ $(document).ready(function() {
 				}
 
 				// Project Highlights
-				if ( projects.projects[project].highlights.length > 0 ){
+				if ( projects.projects[project].description.length > 0 ){
 
 					$(".project-content:last").append(HTMLprojectHighlights, HTMLprojectHighlightsStart);
 
-					projects.projects[project].highlights.forEach(function(item){
+					projects.projects[project].description.forEach(function(item){
 						projectHighlights = HTMLprojectList.replace("%data%", item);
 						$(".highlights:last").append(projectHighlights);
 					});
 				}
 
-				// Project Images Column
-				$(".project:last").prepend(HTMLprojectImages);
-				var projectImages = HTMLprojectImage.replace("%link%", projects.projects[project].url).replace("%title%", projects.projects[project].title).replace(/\%data%/g, projects.projects[project].titleShort);
-				$(".project-images:last").append(projectImages);
+				//var projectImages = HTMLprojectImage.replace("%link%", projects.projects[project].url).replace("%title%", projects.projects[project].title).replace(/\%data%/g, projects.projects[project].titleShort);
+				//$(".project-images:last").append(projectImages);
 
+				// Images
+				if (projects.projects[project].images.length > 0){
+
+					$(".project:last").prepend(HTMLprojectImagesCol);
+					$(".project-images:last").prepend(HTMLprojectImageRotator);
+
+					projects.projects[project].images.forEach(function(item){
+						var projectImage = HTMLprojectImage.replace(/\%data%/g, item).replace("%title%", projects.projects[project].title);
+						$(".orbit-container:last").append(projectImage);
+					});
+				}
+
+				var projectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
 				var projectUrl = HTMLprojectURL.replace("%data%", projects.projects[project].url).replace("%title%", projects.projects[project].title);
-				$(".project-images:last").append(projectUrl);
+				$(".project-images:last").append(projectUrl, projectDates);
+
 
 			}
 		}
 	}; projects.display();
 
 $("#mapDiv").append(googleMap);
+
+// Initialize Foundation
+$(document).foundation();

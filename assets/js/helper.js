@@ -12,7 +12,7 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h2>%data% -';
+var HTMLheaderName = '<h2>%data% - ';
 var HTMLheaderRole = '%data%</h2>';
 
 var HTMLcontactStart = '<ul class="inline contact-info"></ul>';
@@ -55,24 +55,34 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 //Projects
 var HTMLprojectStart = '<article class="row project %class%"></article>';
 var HTMLprojectContent = '<div class="project-content large-4 medium-5 small-12 columns end"></div>';
-var HTMLprojectImages = '<div class="project-images large-6 large-offset-1 medium-6 medium-offset-1 small-12 columns"></div>';
+var HTMLprojectImagesCol = '<div class="project-images large-6 large-offset-1 medium-6 medium-offset-1 small-12 columns"></div>';
 
 var HTMLprojectTitle = '<h2>%data%</h2>';
-var HTMLprojectList = '<li>%data%</li>'; // reuse this
+var HTMLprojectList = '<li>%data%</li>'; // used for role and description
 var HTMLprojectRole = '<h3>Role</h3>';
 var HTMLprojectRoleStart = '<ul class="role"></ul>';
 var HTMLprojectHighlights = '<h3>Highlights</h3>';
 var HTMLprojectHighlightsStart = '<ul class="highlights"></ul>';
-
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<a href="%link%" target="_blank" title="%title%">\
-                          <img src="assets/images/project-%data%-medium@tablet.jpg" srcset="\
-                          assets/images/project-%data%-small@mobile.jpg 320w,\
-                          assets/images/project-%data%-medium@tablet.jpg 460w,\
-                          assets/images/project-%data%-large@desktop.jpg 600w" sizes="100vw" alt="Project - %data%"></a>';
+var HTMLprojectDates = '<div class="dates float-left">%data%</div>';
+var HTMLprojectImageRotator = '<div class="orbit" role="region" data-orbit data-auto-play="false">\
+                                <ul class="orbit-container">\
+                                  <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>\
+                                  <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>\
+                                </ul>\
+                              </div>';
+var HTMLprojectImage = '<li class="orbit-slide">\
+                        <img src="%data%-medium@tablet.jpg" srcset="\
+                                  %data%-small@mobile.jpg 320w,\
+                                  %data%-medium@tablet.jpg 460w,\
+                                  %data%-large@desktop.jpg 600w" sizes="100vw" alt="Project - %title%" class="orbit-image">\
+                        </li>';
 var HTMLprojectURL = '<a href="%data%" target="_blank" class="large button float-right">%title%</a>';
 
-//var HTMLprojectDates = '<div class="date-text">%data%</div>';
+// var HTMLprojectImage = '<a href="%link%" target="_blank" title="%title%">\
+//                           <img src="assets/images/project-%data%-medium@tablet.jpg" srcset="\
+//                           assets/images/project-%data%-small@mobile.jpg 320w,\
+//                           assets/images/project-%data%-medium@tablet.jpg 460w,\
+//                           assets/images/project-%data%-large@desktop.jpg 600w" sizes="100vw" alt="Project - %data%"></a>';
 
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';

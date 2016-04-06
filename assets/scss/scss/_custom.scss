@@ -11,6 +11,7 @@ body {
 	}
 }
 header#nav {
+	z-index: 99;
 	background: rgba(255,255,255,.95);
 	border-top: solid 5px $primary-color;
 	border-bottom: solid 1px #eeeeee;
@@ -148,6 +149,12 @@ main {
 					font-size: 1rem;
 				}
 			}
+			.dates {
+				padding-top: 10px;
+				font-size: 13px;
+				font-style: italic;
+				@include hide-for-only(medium);
+			}
 			&.amobikes {
 				img {
 					border: solid 6px $tertiary-color;
@@ -213,6 +220,11 @@ main {
 				font-style: italic;
 				font-size: 1rem;
 				font-weight: 400;
+			}
+			img {
+				@include border-radius (50%);
+				border: solid 4px lighten($roarange, 25%);
+				width: 100px;
 			}
 		}
 		#summary {

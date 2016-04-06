@@ -3,15 +3,31 @@
 	{
 		"selected_items":
 		[
+			[
+				"html",
+				"HTMLprojectURL"
+			],
+			[
+				"recipe",
+				"recipeEntry"
+			],
+			[
+				"field",
+				"fieldIngredients"
+			],
+			[
+				"reci",
+				"recipe-entry"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "resume.html",
 			"settings":
 			{
-				"buffer_size": 1884,
+				"buffer_size": 1878,
 				"line_ending": "Unix"
 			}
 		},
@@ -19,15 +35,7 @@
 			"file": "portfolio.html",
 			"settings":
 			{
-				"buffer_size": 7264,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 730,
+				"buffer_size": 1207,
 				"line_ending": "Unix"
 			}
 		},
@@ -35,23 +43,7 @@
 			"file": "assets/scss/js/app.js",
 			"settings":
 			{
-				"buffer_size": 6991,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "assets/scss/scss/_custom.scss",
-			"settings":
-			{
-				"buffer_size": 5779,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "assets/js/resumeBuilder.js",
-			"settings":
-			{
-				"buffer_size": 5965,
+				"buffer_size": 10432,
 				"line_ending": "Unix"
 			}
 		},
@@ -59,7 +51,32 @@
 			"file": "assets/js/helper.js",
 			"settings":
 			{
-				"buffer_size": 9177,
+				"buffer_size": 10230,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "I made some modifications to the original rubric because I'm using this for my actual personal site: http://garabedium.com/resume.html and projects: http://garabedium.com/portfolio.html. \n\nI added some additional json objects, removed and combined some to better fit my design and content. For example, I didn't want to use an images array for my projects because I'm using srcset to optionally load various image sizes and it was more DRY to simply replace the image shortname since my images are being optimized with Grunt. I added actual links for \n\nI also tried to make some areas more efficient. Instead of creating a variable for each piece of contact info (mobile, email, twitter etc.), I looped through and used the object key for the text. ",
+			"settings":
+			{
+				"buffer_size": 749,
+				"line_ending": "Unix",
+				"name": "I made some modifications to the original rubric b"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1880,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 1423,
 				"line_ending": "Unix"
 			}
 		}
@@ -78,6 +95,18 @@
 			[
 				"preferences",
 				"Preferences: Settings - User"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
 			],
 			[
 				"package control install",
@@ -113,10 +142,6 @@
 			],
 			[
 				"Package Control: install",
-				"Package Control: Install Package"
-			],
-			[
-				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -178,19 +203,26 @@
 	[
 		"/Users/greg/Sites/garabedium",
 		"/Users/greg/Sites/garabedium/assets",
-		"/Users/greg/Sites/garabedium/assets/js",
-		"/Users/greg/Sites/garabedium/assets/scss",
-		"/Users/greg/Sites/garabedium/assets/scss/js",
-		"/Users/greg/Sites/garabedium/assets/scss/js/min",
-		"/Users/greg/Sites/garabedium/dist",
-		"/Users/greg/Sites/garabedium/dist/js"
+		"/Users/greg/Sites/garabedium/assets/js"
 	],
 	"file_history":
 	[
-		"/Users/greg/Sites/garabedium/resume.html",
-		"/Users/greg/Sites/garabedium/resume2.html",
-		"/Users/greg/Sites/garabedium/assets/scss/js/app.js",
 		"/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/greg/Sites/garabedium/assets/scss/index.html",
+		"/Users/greg/Sites/garabedium/assets/scss/scss/_custom.scss",
+		"/Users/greg/Sites/garabedium/assets/js/helper.js",
+		"/Users/greg/Sites/garabedium/portfolio.html",
+		"/Users/greg/Sites/garabedium/assets/scss/js/app.js",
+		"/Users/greg/Documents/clients/beekeeper group/BTWF/wrappers/kindness-cake/xml-entries-recipes-experimental.html",
+		"/Users/greg/Documents/clients/beekeeper group/BTWF/wrappers/kindness-cake/xml-entries-testing.js",
+		"/Users/greg/Documents/clients/beekeeper group/BTWF/wrappers/kindness-cake/xml-entries-recipes-label-filter.html",
+		"/Users/greg/Documents/clients/beekeeper group/BTWF/wrappers/kindness-cake/xml-entries-testing.html",
+		"/Users/greg/Documents/clients/beekeeper group/BTWF/wrappers/kindness-cake/xml-entries-recipes copy.html",
+		"/Users/greg/Documents/clients/beekeeper group/BTWF/wrappers/kindness-cake/xml-entries-recipes.html",
+		"/Users/greg/Sites/garabedium/index.html",
+		"/Users/greg/Sites/garabedium/resume.html",
+		"/Users/greg/Sites/garabedium/assets/js/resumeBuilder.js",
+		"/Users/greg/Sites/garabedium/resume2.html",
 		"/Users/greg/Sites/garabedium/config.codekit",
 		"/Users/greg/Sites/jts/prophets/prophets.sublime-project",
 		"/Users/greg/Downloads/chrome/Lesson 2 Subtitles/02 - What Makes a Repository a Repository.srt",
@@ -302,19 +334,7 @@
 		"/Users/greg/Downloads/chrome/silviomoreto-bootstrap-select-9656fcf/README.md",
 		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-machform-website-styles.css",
 		"/Users/greg/Documents/web/_expression-engine/ee plugins-extensions/reelocate-master/README.md",
-		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-machform-facebook-styles.css",
-		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-bookt-custom.css",
-		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/css/bootstrap.css",
-		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/html/blog.html",
-		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/css/styles.css",
-		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/html/blog-entry.html",
-		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-machform-website.css",
-		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/css/styles-index.css",
-		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/html/index.html",
-		"/Users/greg/Documents/web/_expression-engine/ee plugins-extensions/Maps-141/README.md",
-		"/Users/greg/Documents/clients/JAR Group/AKC Humane Fund/asts/img/akc-humane-fund-image-sprites.png",
-		"/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/unordered-list.sublime-snippet",
-		"/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/lorem-ipsum-text.sublime-snippet"
+		"/Users/greg/Documents/clients/sampahousing/asts/css/sampahousing-machform-facebook-styles.css"
 	],
 	"find":
 	{
@@ -333,6 +353,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sampahousing.com",
+			"\"#",
+			"titleShort",
+			"(){\n",
+			"role",
+			"description",
+			"	managed",
+			"join",
+			".wrap",
+			"$",
+			"#output",
+			"projects",
+			"body",
 			".contact-info",
 			"roarange",
 			"schools",
@@ -447,20 +480,7 @@
 			"clients",
 			"whowe are",
 			"$sans-black-sentence",
-			"$sans-black-caps",
-			"$sans-medium-sentence",
-			"$sans-medium-title",
-			"$sans-black-caps",
-			"$sans-black-sentence",
-			"$sans-medium-sentence",
-			"sans-medium-title",
-			"utility",
-			"btn-translate",
-			"sampa-benefits",
-			"height=\"200\"",
-			"width=\"300\" ",
-			"aside.right",
-			"date p span"
+			"$sans-black-caps"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -523,19 +543,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "resume.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1884,
+						"buffer_size": 1878,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								726,
-								726
+								402,
+								402
 							]
 						],
 						"settings":
@@ -544,10 +564,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 341.0,
+						"translation.y": 143.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -556,78 +576,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7264,
+						"buffer_size": 1207,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4608,
-								4608
+								731,
+								731
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/Users/greg/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								635,
-								635
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "assets/scss/js/app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6991,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -638,49 +600,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "assets/scss/scss/_custom.scss",
+					"buffer": 2,
+					"file": "assets/scss/js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5779,
+						"buffer_size": 10432,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4559,
-								4559
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3474.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "assets/js/resumeBuilder.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5965,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3722,
-								2410
+								1577,
+								1577
 							]
 						],
 						"settings":
@@ -689,27 +622,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1095.0,
+						"translation.y": 3631.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 3,
 					"file": "assets/js/helper.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9177,
+						"buffer_size": 10230,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9177,
-								9177
+								2431,
+								2431
 							]
 						],
 						"settings":
@@ -719,10 +652,95 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3151.0,
+						"translation.y": 448.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								749,
+								749
+							]
+						],
+						"settings":
+						{
+							"auto_name": "I made some modifications to the original rubric b",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1880,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								641,
+								641
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								614,
+								614
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -730,7 +748,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 70.0
 	},
 	"input":
 	{
@@ -781,8 +799,28 @@
 		"selected_items":
 		[
 			[
+				"helper.js",
+				"assets/js/helper.js"
+			],
+			[
 				"app.js",
 				"assets/scss/js/app.js"
+			],
+			[
+				"portfolio",
+				"portfolio.html"
+			],
+			[
+				"resume.html",
+				"resume.html"
+			],
+			[
+				"app",
+				"assets/scss/js/app.js"
+			],
+			[
+				"resume",
+				"resume.html"
 			],
 			[
 				"custom.",
@@ -795,10 +833,6 @@
 			[
 				"helper",
 				"assets/js/helper.js"
-			],
-			[
-				"resume.html",
-				"resume.html"
 			],
 			[
 				"",
@@ -837,7 +871,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 232.0,
+	"side_bar_width": 269.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
