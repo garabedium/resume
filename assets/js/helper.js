@@ -12,9 +12,12 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
+
+// Bio
 var HTMLheaderName = '<h2>%data% - ';
 var HTMLheaderRole = '%data%</h2>';
-
+var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLwelcomeMsg = '%data%';
 var HTMLcontactStart = '<ul class="inline contact-info"></ul>';
 var HTMLcontactItem  = '<li><a href="%data%" target="_blank">%contact%</a></li>';
 // var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
@@ -25,12 +28,9 @@ var HTMLcontactItem  = '<li><a href="%data%" target="_blank">%contact%</a></li>'
 // var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 // var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '%data%';
-
+// Work
 var HTMLskillsStart = '<ul id="skills-list"></ul>';
 var HTMLskills = '<li><span>%label%:</span> %data%</li>';
-
 var HTMLworkStart = '<article class="item work-entry"></article>';
 var HTMLworkEmployer = '<h2><a href="#" target="_blank">%data%</a></h2>';
 var HTMLworkTitle = ' <h3>%data%</h3>';
@@ -39,6 +39,7 @@ var HTMLworkLocation = '<div class="location-text float-right">%data%</div>';
 var HTMLworkDescriptionStart = '<ul class="description-items"></ul>';
 var HTMLworkDescription = '<li>%data%</li>';
 
+// Education
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<h2><a href="%link%" target="_blank">%data%</a></h2>';
 var HTMLschoolDegree = '<h3>%data%, ';
@@ -50,13 +51,11 @@ var HTMLonlineClasses = '<h2>Online Classes</h2>';
 var HTMLonlineSchool = '<h2><a href="%link%" target="_blank">%data%</a></h2>';
 var HTMLonlineCourse = '<a href="%link%" target="_blank">%data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-//var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
-//Projects
+// Projects
 var HTMLprojectStart = '<article class="row project %class%"></article>';
 var HTMLprojectContent = '<div class="project-content large-4 medium-5 small-12 columns end"></div>';
 var HTMLprojectImagesCol = '<div class="project-images large-6 large-offset-1 medium-6 medium-offset-1 small-12 columns"></div>';
-
 var HTMLprojectTitle = '<h2>%data%</h2>';
 var HTMLprojectList = '<li>%data%</li>'; // used for role and description
 var HTMLprojectRole = '<h3>Role</h3>';
@@ -78,15 +77,8 @@ var HTMLprojectImage = '<li class="orbit-slide">\
                         </li>';
 var HTMLprojectURL = '<a href="%data%" target="_blank" class="large button float-right">%title%</a>';
 
-// var HTMLprojectImage = '<a href="%link%" target="_blank" title="%title%">\
-//                           <img src="assets/images/project-%data%-medium@tablet.jpg" srcset="\
-//                           assets/images/project-%data%-small@mobile.jpg 320w,\
-//                           assets/images/project-%data%-medium@tablet.jpg 460w,\
-//                           assets/images/project-%data%-large@desktop.jpg 600w" sizes="100vw" alt="Project - %data%"></a>';
-
-var internationalizeButton = '<button>Internationalize</button>';
+//var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
-
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.

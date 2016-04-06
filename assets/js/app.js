@@ -29,7 +29,7 @@ $(document).ready(function() {
 				"tools": ["Git","Gulp","Grunt","Sublime Text"]
 			},
 		"welcomeMessage" : "<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
-		"biopic" : "/assets/images/greg.jpg",
+		"biopic" : "assets/images/greg.jpg",
 		"contacts":
 		{
 			"mobile": "tel:+55.11.96026.5146",
@@ -195,7 +195,7 @@ $(document).ready(function() {
 		"projects": [
 		{
 			"title": "Dandara Careers",
-			"images": ["/assets/images/project-dandara","/assets/images/project-dandara-1","/assets/images/project-dandara-2","/assets/images/project-dandara-3"],
+			"images": ["assets/images/project-dandara","assets/images/project-dandara-1","assets/images/project-dandara-2","assets/images/project-dandara-3"],
 			"dates": "2014",
 			"titleShort":"dandara",
 			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://killerbyt.es/' target='_blank' title='KillerBytes'>KillerBytes</a>"],
@@ -204,7 +204,7 @@ $(document).ready(function() {
 		},
 		{
 			"title": "FTE Leaders",
-			"images": ["/assets/images/project-fteleaders","/assets/images/project-fteleaders-1","/assets/images/project-fteleaders-2","/assets/images/project-fteleaders-3"],
+			"images": ["assets/images/project-fteleaders","assets/images/project-fteleaders-1","assets/images/project-fteleaders-2","assets/images/project-fteleaders-3"],
 			"dates": "2013",
 			"titleShort": "fteleaders",
 			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://trumedia.io/' target='_blank'>TruMedia</a>"],
@@ -213,7 +213,7 @@ $(document).ready(function() {
 		},
 		{
 			"title": "AKC Humane Fund",
-			"images": ["/assets/images/project-akc","/assets/images/project-akc-1","/assets/images/project-akc-2"],
+			"images": ["assets/images/project-akc","assets/images/project-akc-1","assets/images/project-akc-2"],
 			"dates": "2013",
 			"titleShort": "akc",
 			"role": ["ExpressionEngine integration","Front-end development + Bootstrap"],
@@ -222,7 +222,7 @@ $(document).ready(function() {
 		},
 		{
 			"title": "AmoBikes",
-			"images": ["/assets/images/project-amobikes"],
+			"images": ["assets/images/project-amobikes"],
 			"dates": "2016",
 			"titleShort":"amobikes", // used for article class and images
 			"role": ["Design","Front-end development + Foundation 5"],
@@ -231,7 +231,7 @@ $(document).ready(function() {
 		},
 		{
 			"title": "Sampa Corretores",
-			"images": ["/assets/images/project-sampahousing","/assets/images/project-sampahousing-1","/assets/images/project-sampahousing-2"],
+			"images": ["assets/images/project-sampahousing","assets/images/project-sampahousing-1","assets/images/project-sampahousing-2"],
 			"dates": "2015",
 			"titleShort": "sampahousing",
 			"role": ["Design","ExpressionEngine integration","Front-end development + Foundation 5"],
