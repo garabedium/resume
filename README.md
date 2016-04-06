@@ -1,12 +1,12 @@
 # resume
 Overview:
+- Resume: custom resumeBuilder.js file located at: assets/js/app.js
+- Resume: custom helper.js file located at assets/js/helper.js
 - Built with Foundation 6 (F6) with SASS
-- F6 project folder: assets/scss/scss
+- F6 project folder: assets/scss
 - Custom SASS located at: assets/scss/scss/_custom.scss
-- Portfolio images sizes generated via Grunt
-- Project was refactored to use Gulp (instead of Grunt) for css / js minifcation
-- resumeBuilder.js file located at: assets/js/app.js
-- helper.js file located at assets/js/helper.js
+- Grunt: Responsive portfolio images generated
+- Gulp: Most of project was refactored to use Gulp for sass -> css build, js minification / concatenation
 
 Credits:
 
