@@ -3132,6 +3132,8 @@ header#nav {
     margin-top: 5px; }
     header#nav .contact-info li:last-child {
       display: none; }
+    header#nav .contact-info li:nth-child(4) {
+      margin-right: 0; }
   header#nav nav {
     font-family: 'Muli';
     font-size: 20px; }
@@ -3172,8 +3174,10 @@ main header {
   text-align: center; }
   main header h1, main header h2 {
     font-family: 'Lato'; }
-  main header h1 span {
-    color: #0096ff; }
+  main header h1 {
+    margin-top: 15px; }
+    main header h1 span {
+      color: #0096ff; }
   main header h2 span {
     color: #a6a6a6; }
 
@@ -3236,6 +3240,8 @@ main.portfolio article.project {
     @media screen and (min-width: 40em) and (max-width: 63.9375em) {
       main.portfolio article.project .dates {
         display: none !important; } }
+  main.portfolio article.project .project-content p {
+    font-weight: 300; }
   main.portfolio article.project.amobikes img {
     border: solid 6px #fc6061; }
   main.portfolio article.project.amobikes .button {
