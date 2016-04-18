@@ -30,14 +30,16 @@ var HTMLcontactItem  = '<li><a href="%data%" target="_blank">%contact%</a></li>'
 
 // Work
 var HTMLskillsStart = '<ul id="skills-list"></ul>';
-var HTMLskills = '<li><span>%label%:</span> %data%</li>';
+//var HTMLskills = '<li><span>%label%:</span> %data%</li>';
+var HTMLskills = '<li>%data%</li>';
 var HTMLworkStart = '<article class="item work-entry"></article>';
 var HTMLworkEmployer = '<h2><a href="#" target="_blank">%data%</a></h2>';
 var HTMLworkTitle = ' <h3>%data%</h3>';
 var HTMLworkDates = '<header class="dates"><h4>%data%</h4></header>';
 var HTMLworkLocation = '<div class="location-text float-right">%data%</div>';
-var HTMLworkDescriptionStart = '<ul class="description-items"></ul>';
-var HTMLworkDescription = '<li>%data%</li>';
+var HTMLworkDescription = '<p>%data%</p>';
+//var HTMLworkDescriptionStart = '<ul class="description-items"></ul>';
+//var HTMLworkDescription = '<li>%data%</li>';
 
 // Education
 var HTMLschoolStart = '<div class="education-entry"></div>';
@@ -55,26 +57,29 @@ var HTMLonlineDates = '<div class="date-text">%data%</div>';
 // Projects
 var HTMLprojectStart = '<article class="row project %class%"></article>';
 var HTMLprojectContent = '<div class="project-content large-4 medium-5 small-12 columns end"></div>';
-var HTMLprojectImagesCol = '<div class="project-images large-6 large-offset-1 medium-6 medium-offset-1 small-12 columns"></div>';
+var HTMLprojectImagesStart = '<div class="project-images large-6 large-offset-1 medium-6 medium-offset-1 small-12 columns"></div>';
 var HTMLprojectTitle = '<h2>%data%</h2>';
 var HTMLprojectList = '<li>%data%</li>'; // used for role and description
 var HTMLprojectRole = '<h3>Role</h3>';
 var HTMLprojectRoleStart = '<ul class="role"></ul>';
-var HTMLprojectHighlights = '<h3>Highlights</h3>';
-var HTMLprojectHighlightsStart = '<ul class="highlights"></ul>';
+//var HTMLprojectHighlights = '<h3>Highlights</h3>';
+var HTMLprojectDescription = '<h3>Description</h3><p>%data%</p>'
+//var HTMLprojectHighlightsStart = '<ul class="highlights"></ul>';
 var HTMLprojectDates = '<div class="dates float-left">%data%</div>';
-var HTMLprojectImageRotator = '<div class="orbit" role="region" data-orbit data-auto-play="false">\
-                                <ul class="orbit-container">\
-                                  <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>\
-                                  <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>\
-                                </ul>\
-                              </div>';
-var HTMLprojectImage = '<li class="orbit-slide">\
-                        <img src="%data%-medium@tablet.jpg" srcset="\
-                                  %data%-small@mobile.jpg 320w,\
-                                  %data%-medium@tablet.jpg 460w,\
-                                  %data%-large@desktop.jpg 600w" sizes="100vw" alt="Project - %title%" class="orbit-image">\
-                        </li>';
+// var HTMLprojectImageRotator = '<div class="orbit" role="region" data-orbit data-auto-play="false">\
+//                                 <ul class="orbit-container">\
+//                                   <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>\
+//                                   <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>\
+//                                 </ul>\
+//                               </div>';
+// var HTMLprojectImage = '<li class="orbit-slide">\
+//                         <img src="%data%-medium@tablet.jpg" srcset="\
+//                                   %data%-small@mobile.jpg 320w,\
+//                                   %data%-medium@tablet.jpg 460w,\
+//                                   %data%-large@desktop.jpg 600w" sizes="100vw" alt="Project - %title%" class="orbit-image">\
+//                         </li>';
+//var HTMLprojectImage = ;
+var HTMLprojectImage = '<img src="%data%" alt="%title%">';
 var HTMLprojectURL = '<a href="%data%" target="_blank" class="large button float-right">%title%</a>';
 
 //var internationalizeButton = '<button>Internationalize</button>';

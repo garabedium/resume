@@ -4,7 +4,8 @@ var gulp  	= require('gulp'),
 	rename		= require('gulp-rename'),
   uglify    = require('gulp-uglify'),
   concat    = require('gulp-concat'),
-  resize    = require('gulp-image-resize');
+  resize    = require('gulp-image-resize'),
+  rev       = require('gulp-rev');
 
 var sassPaths = [
 	'assets/scss/bower_components/foundation-sites/scss',
@@ -24,7 +25,7 @@ gulp.task('styles', function() {
 gulp.task('scripts', function() {
     gulp.src('./assets/js/*.js')
         .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('./dist/js/'))
 });
 
@@ -41,6 +42,7 @@ gulp.task('foundation', function() {
 gulp.task('clean-css', function() {
   return gulp.src('./assets/css/*.css')
   	.pipe(rename({ suffix: '.min' }))
+    //.pipe(rev())
     .pipe(cleanCSS())
     .pipe(gulp.dest('./dist/css'))
 });

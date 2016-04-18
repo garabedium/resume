@@ -3128,6 +3128,10 @@ header#nav {
   right: 0;
   left: 0;
   top: 0; }
+  header#nav .contact-info {
+    margin-top: 5px; }
+    header#nav .contact-info li:last-child {
+      display: none; }
   header#nav nav {
     font-family: 'Muli';
     font-size: 20px; }
@@ -3161,6 +3165,8 @@ header#nav {
     header#nav.scroll nav li a {
       font-size: 16px;
       padding-bottom: 3px; }
+    header#nav.scroll .contact-info {
+      font-size: 12px; }
 
 main header {
   text-align: center; }
@@ -3309,9 +3315,20 @@ main.resume .item {
     font-style: italic; }
   main.resume .item:last-child {
     margin-bottom: 15px; }
-  main.resume .item#skills #skills-list li span {
-    font-weight: 700;
-    text-transform: capitalize; }
+  main.resume .item#skills #skills-list {
+    list-style-type: none;
+    text-align: center;
+    margin-left: 0; }
+    main.resume .item#skills #skills-list li {
+      display: inline-block;
+      background-color: #F4F4F5;
+      margin: 4px 10px 8px 0px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      font-size: 12px;
+      font-weight: 700; }
   main.resume .item#education .education-entry {
     margin-bottom: 15px; }
     main.resume .item#education .education-entry h3 {

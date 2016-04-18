@@ -21,6 +21,14 @@ header#nav {
 	right: 0;
 	left: 0;
 	top: 0;
+	.contact-info {
+		li {
+			&:last-child {
+				display: none;
+			}
+		}
+		margin-top: 5px;
+	}
 	nav {
 		font-family: 'Muli';
 		font-size: 20px;
@@ -66,6 +74,9 @@ header#nav {
 		nav li a {
 			font-size: 16px;
 			padding-bottom: 3px
+		}
+		.contact-info {
+			font-size: 12px;
 		}
 	}
 } //end:header
@@ -272,11 +283,17 @@ main {
 			}
 			&#skills {
 				#skills-list {
+					list-style-type: none;
+					text-align: center;
+					margin-left: 0;
 					li {
-						span {
-							font-weight: 700;
-							text-transform: capitalize;
-						}
+						display: inline-block;
+						background-color: #F4F4F5;
+					    margin: 4px 10px 8px 0px;
+					    padding: 4px 12px;
+					    @include border-radius (4px);
+					    font-size: 12px;
+					    font-weight: 700;
 					}
 				}
 			}

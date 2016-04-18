@@ -9,7 +9,8 @@
     "gulp-sass": "^2.2.0",
     "gulp-uglify": "^1.5.3",
     "gulp-concat": "^2.6.0",
-    "gulp-image-resize": "^0.8.0"
+    "gulp-image-resize": "^0.8.0",
+    "gulp-rev": "^7.0.0"
   },
   "dependencies": {
     "grunt-responsive-images": "^0.1.7"
