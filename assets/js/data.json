@@ -1,0 +1,42 @@
+{
+	"bio": {
+		"name": "Greg",
+		"role": "Web Developer",
+		"skills": ["HTML5", "SASS", "Javascript", "jQuery", "Bootstrap","CSS3","Foundation", "Git", "Gulp", "Grunt", "ExpressionEngine", "Wordpress", "CraftCMS"],
+		"welcomeMessage": "<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
+		"biopic": "assets/images/greg.jpg",
+		"contacts": {
+			"mobile": "tel:+55.11.96026.5146",
+			"email": "mailto:garabedium@gmail.com",
+			"github": "http://github.com/garabedium",
+			"linkedin": "http://linkedin.com/in/garabedium",
+			"location": "Sao Paulo, Brazil"
+		}
+	},
+	"jobs": [
+		{
+			"employer": "Freelance Web Developer",
+			"title": "@Self-Employed",
+			"location": "Sao Paulo, Brazil",
+			"dates": "2012 - Present",
+			"description": "Front-end development for agencies. ExpressionEngine builds, maintenance.",
+			"url":"http://garabedium.com/"
+		},
+		{
+			"employer": "Sampa Housing",
+			"title": "Tech & Marketing Director",
+			"location": "Sao Paulo, Brazil",
+			"dates": "2012 - 2015",
+			"description": "Managed website. Designed and developed property lead generation site",
+			"url":"http://sampahousing.com/"
+		},
+		{
+			"employer": "Blue State Digital",
+			"title": "Digital Project Manager",
+			"location": "Washington DC, USA",
+			"dates": "2009 - 2012",
+			"description": "Managed website and app builds. Designed project scopes and budgets.",
+			"url":"http://bluestatedigital.com/"
+		}
+	]
+}

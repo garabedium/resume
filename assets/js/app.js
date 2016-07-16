@@ -1,3 +1,10 @@
+// Refactor goals:
+/*
+	- Move data to separate json file
+	- Get rid of helper.js?
+	- Convert scrollHeader to function
+*/
+
 // Custom JS
 $(document).ready(function() {
 
@@ -16,59 +23,108 @@ $(document).ready(function() {
 
 }); // end - doc ready
 
-// JSON Data
+// Data
+var model = {
 
- 	var bio = {
-		"name": "Greg",
-		"role": "Web Developer",
-		"skills": ["HTML5","SASS","Javascript","jQuery","Bootstrap","Foundation","Git","Gulp","Grunt","ExpressionEngine","Wordpress","CraftCMS"],
-			// {
-			// 	"languages": ["HTML5","CSS3","SASS","jQuery","Javascript"],
-			// 	"frameworks": ["Foundation","Bootstrap"],
-			// 	"CMS": ["ExpressionEngine","Wordpress","CraftCMS"],
-			// 	"tools": ["Git","Gulp","Grunt","Sublime Text"]
-			// },
-		"welcomeMessage" : "<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
-		"biopic" : "assets/images/greg.jpg",
-		"contacts":
-		{
-			"mobile": "tel:+55.11.96026.5146",
-			"email": "mailto:garabedium@gmail.com",
-			"github": "http://github.com/garabedium",
-			"linkedin":"http://linkedin.com/in/garabedium",
-			"location": "Sao Paulo, Brazil"
-		},
-		"display": function(){
+};
 
-			var bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
-			var bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-			var bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+// Control: router between model and view
+var control = {
 
-			$("#title").append(bioPic, bioName);
-			$("#summary").prepend(bioMsg);
+};
 
-			if ( Object.keys(bio.contacts).length > 0 ){
-				$("footer .contact").prepend(HTMLcontactStart);
-				$("header#nav").append(HTMLcontactStart);
+// Views
+var viewBio = {
 
-				for ( var contact in bio.contacts ){
-					if ( bio.contacts.hasOwnProperty(contact) ){
-						var bioContact = HTMLcontactItem.replace("%contact%", contact).replace("%data%", bio.contacts[contact]);
-						$(".contact-info").append(bioContact);
+}
 
-				    }
-				}
-			}
+	$.ajax({
+		url: 'dist/js/data.min.json',
+		method: 'GET',
+		format: 'json',
+		dataType: 'json',
+	})
+	.done(function(data) {
+		//console.log(data.bio.name);
+		var bio, bioName, bioMsg, bioPic;
+			bio = data.bio;
 
-			if (bio.skills.length > 0){
-				$("#skills").append(HTMLskillsStart);
-				bio.skills.forEach(function(skill) {
-					var bioSkill = HTMLskills.replace("%data%", skill);
-					$("#skills-list").append(bioSkill);
-				});
-			}
+		bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
+		bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+
+		$("#title").append(bioPic, bioName);
+		$("#summary").prepend(bioMsg);
+
+
+		if (bio.skills.length > 0){
+			$("#skills").append(HTMLskillsStart);
+			bio.skills.forEach(function(skill) {
+				var bioSkill = HTMLskills.replace("%data%", skill);
+				$("#skills-list").append(bioSkill);
+			});
 		}
-	}; bio.display();
+
+	})
+	.fail(function() {
+		console.log("error");
+	})
+
+
+
+// JSON Data / AJAX
+//var modBio = model.bio;
+// console.log(
+// 	//model.bio["name"]
+// 	//model.bio.name
+// 	//model.bio.contacts.mobile
+// 	//modBio.name
+// );
+
+ // 	var bio = {
+	// 	"name": "Greg",
+	// 	"role": "Web Developer",
+	// 	"skills": ["HTML5","SASS","Javascript","jQuery","Bootstrap","Foundation","Git","Gulp","Grunt","ExpressionEngine","Wordpress","CraftCMS"],
+	// 	"welcomeMessage" : "<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
+	// 	"biopic" : "assets/images/greg.jpg",
+	// 	"contacts":
+	// 	{
+	// 		"mobile": "tel:+55.11.96026.5146",
+	// 		"email": "mailto:garabedium@gmail.com",
+	// 		"github": "http://github.com/garabedium",
+	// 		"linkedin":"http://linkedin.com/in/garabedium",
+	// 		"location": "Sao Paulo, Brazil"
+	// 	},
+	// 	"display": function(){
+
+	// 		var bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
+	// 		var bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	// 		var bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+
+	// 		$("#title").append(bioPic, bioName);
+	// 		$("#summary").prepend(bioMsg);
+
+	// 		if ( Object.keys(bio.contacts).length > 0 ){
+	// 			$("footer .contact").prepend(HTMLcontactStart);
+	// 			//$("header#nav").append(HTMLcontactStart);
+	// 			for ( var contact in bio.contacts ){
+	// 				if ( bio.contacts.hasOwnProperty(contact) ){
+	// 					var bioContact = HTMLcontactItem.replace("%contact%", contact).replace("%data%", bio.contacts[contact]);
+	// 					$(".contact-info").append(bioContact);
+
+	// 			    }
+	// 			}
+	// 		}
+
+	// 		if (bio.skills.length > 0){
+	// 			$("#skills").append(HTMLskillsStart);
+	// 			bio.skills.forEach(function(skill) {
+	// 				var bioSkill = HTMLskills.replace("%data%", skill);
+	// 				$("#skills-list").append(bioSkill);
+	// 			});
+	// 		}
+	// 	}
+	// }; bio.display();
 
 	var work = {
 		"jobs": [
@@ -87,7 +143,6 @@ $(document).ready(function() {
 			"location": "Sao Paulo, Brazil",
 			"dates": "2012 - 2015",
 			"description": "Managed website. Designed and developed property lead generation site",
-			//"description": ["Managed booking website front end, led redesign effort","Designed and developed property lead generation site","Created business solutions to aid a staff of 10 employees"],
 			"url":"http://sampahousing.com/"
 		},
 		{
@@ -96,7 +151,6 @@ $(document).ready(function() {
 			"location": "Washington DC, USA",
 			"dates": "2009 - 2012",
 			"description": "Managed website and app builds. Designed project scopes and budgets.",
-			//"descriptionLong": ["Managed website, app, and social projects, from concept to launch","Designed project timelines and budgets","Built, maintained, and expanded client relationships"],
 			"url":"http://bluestatedigital.com/"
 		}
 	],
@@ -115,12 +169,6 @@ $(document).ready(function() {
 
 				workEntry.append(workDates, workLocation, workEmployer, workTitle, workDescription);
 
-					// workEntry.append(HTMLworkDescriptionStart);
-
-					// job.description.forEach(function(item){
-					// 	var descriptionItem = HTMLworkDescription.replace("%data%", item);
-					// 	$(".description-items:last").append(descriptionItem);
-					// });
 			});
 		}
 	}; work.display();
@@ -198,34 +246,28 @@ $(document).ready(function() {
 		{
 			"title": "Dandara Careers",
 			"images": ["assets/images/project-dandara-large@desktop.jpg"],
-			//"assets/images/project-dandara-1","assets/images/project-dandara-2","assets/images/project-dandara-3"],
 			"dates": "2014",
 			"titleShort":"dandara",
 			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://killerbyt.es/' target='_blank' title='KillerBytes'>KillerBytes</a>"],
 			"description": "Careers site where users can search for and apply for jobs. Search by categories",
-			//"description":["Careers site where users can search for and apply for jobs","Search by categories"],
 			"url":"http://dandaracareers.com/"
 		},
 		{
 			"title": "FTE Leaders",
 			"images": ["assets/images/project-fteleaders-large@desktop.jpg"],
-			//,"assets/images/project-fteleaders-1","assets/images/project-fteleaders-2","assets/images/project-fteleaders-3"],
 			"dates": "2013",
 			"titleShort": "fteleaders",
 			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://trumedia.io/' target='_blank'>TruMedia</a>"],
 			"description":"Large site with diverse templates. Faceted search.",
-			//"description":["Large site with diverse templates","Faceted category search","Custom events template with Google Maps integration"],
 			"url":"http://fteleaders.org/"
 		},
 		{
 			"title": "AKC Humane Fund",
 			"images": ["assets/images/project-akc-large@desktop.jpg"],
-			//,"assets/images/project-akc-1","assets/images/project-akc-2"],
 			"dates": "2013",
 			"titleShort": "akc",
 			"role": ["ExpressionEngine integration","Front-end development + Bootstrap"],
 			"description": "Donation site for American Kennel Club",
-			//"description":["Donation site for American Kennel Club","Blog with Disqus comments"],
 			"url":"http://akchumanefund.org/"
 		},
 		{
@@ -235,7 +277,6 @@ $(document).ready(function() {
 			"titleShort":"amobikes", // used for article class and images
 			"role": ["Design","Front-end development + Foundation 5"],
 			"description": "Splash site for personal biking project in Brazil",
-			//"description":["Splash site for personal biking project in Brazil.","AJAX form submission","Mailchimp integration"],
 			"url":"http://amobikes.com/"
 		},
 		{
@@ -280,17 +321,6 @@ $(document).ready(function() {
 				var projectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 				$(".project-content:last").append(projectDescription);
 
-				// if ( projects.projects[project].description.length > 0 ){
-				// 	$(".project-content:last").append(HTMLprojectHighlights, HTMLprojectHighlightsStart);
-				// 	projects.projects[project].description.forEach(function(item){
-				// 		projectHighlights = HTMLprojectList.replace("%data%", item);
-				// 		$(".highlights:last").append(projectHighlights);
-				// 	});
-				// }
-
-				//var projectImages = HTMLprojectImage.replace("%link%", projects.projects[project].url).replace("%title%", projects.projects[project].title).replace(/\%data%/g, projects.projects[project].titleShort);
-				//$(".project-images:last").append(projectImages);
-
 				// Images
 				if (projects.projects[project].images.length > 0){
 
@@ -312,7 +342,3 @@ $(document).ready(function() {
 		}
 	}; projects.display();
 
-$("#mapDiv").append(googleMap);
-
-// Initialize Foundation
-$(document).foundation();

@@ -23,7 +23,7 @@ gulp.task('styles', function() {
 
 // Minify JS
 gulp.task('scripts', function() {
-    gulp.src('./assets/js/*.js')
+    gulp.src('./assets/js/*.*')
         .pipe(rename({suffix: '.min'}))
         //.pipe(uglify())
         .pipe(gulp.dest('./dist/js/'))
@@ -50,6 +50,6 @@ gulp.task('clean-css', function() {
 // Watch Tasks
 gulp.task('default',function() {
     gulp.watch('./assets/scss/**/*.scss',['styles','clean-css']);
-    gulp.watch('./assets/js/*.js',['scripts']);
+    gulp.watch('./assets/js/*.*',['scripts']);
     gulp.watch('./assets/js/foundation/*.js',['foundation']);
 });
