@@ -24,20 +24,7 @@ $(document).ready(function() {
 }); // end - doc ready
 
 // Data
-var model = {
-
-};
-
-// Control: router between model and view
-var control = {
-
-};
-
-// Views
-var viewBio = {
-
-}
-
+var model =
 	$.ajax({
 		url: 'dist/js/data.min.json',
 		method: 'GET',
@@ -45,30 +32,77 @@ var viewBio = {
 		dataType: 'json',
 	})
 	.done(function(data) {
-		//console.log(data.bio.name);
-		var bio, bioName, bioMsg, bioPic;
-			bio = data.bio;
+		control.getData(data);
+		//return data;
+		//console.log(data);
 
-		bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
-		bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-		bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+		// var bio, bioName, bioMsg, bioPic;
+		// 	bio = data.bio;
 
-		$("#title").append(bioPic, bioName);
-		$("#summary").prepend(bioMsg);
+		// bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
+		// bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		// bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+
+		// $("#title").append(bioPic, bioName);
+		// $("#summary").prepend(bioMsg);
 
 
-		if (bio.skills.length > 0){
-			$("#skills").append(HTMLskillsStart);
-			bio.skills.forEach(function(skill) {
-				var bioSkill = HTMLskills.replace("%data%", skill);
-				$("#skills-list").append(bioSkill);
-			});
-		}
+		// if (bio.skills.length > 0){
+		// 	$("#skills").append(HTMLskillsStart);
+		// 	bio.skills.forEach(function(skill) {
+		// 		var bioSkill = HTMLskills.replace("%data%", skill);
+		// 		$("#skills-list").append(bioSkill);
+		// 	});
+		// }
 
 	})
 	.fail(function() {
 		console.log("error");
-	})
+	});
+
+// Control
+var control = {
+	init: function(){
+		//viewBio.init();
+	},
+	getData: function(){
+		console.log(model.responseJSON);
+		//return model.responseJSON;
+	},
+};
+
+// Views
+var viewBio = {
+	init: function(){
+		this.render();
+	},
+	render: function(){
+		//console.log( control.getData() );
+		//console.log(testD);
+		//console.log( control.getData() );
+		// var bio, bioName, bioMsg, bioPic;
+		// 	bio = data.bio;
+
+		// bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
+		// bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		// bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+
+		// $("#title").append(bioPic, bioName);
+		// $("#summary").prepend(bioMsg);
+
+
+		// if (bio.skills.length > 0){
+		// 	$("#skills").append(HTMLskillsStart);
+		// 	bio.skills.forEach(function(skill) {
+		// 		var bioSkill = HTMLskills.replace("%data%", skill);
+		// 		$("#skills-list").append(bioSkill);
+		// 	});
+		// }
+
+	},
+};
+
+// Initialize controller
 
 
 
