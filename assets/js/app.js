@@ -23,47 +23,12 @@ $(document).ready(function() {
 
 }); // end - doc ready
 
-// Data
-//var model =
-	// $.ajax({
-	// 	url: 'dist/js/data.min.json',
-	// 	method: 'GET',
-	// 	format: 'json',
-	// 	dataType: 'json',
-	// })
-	// .done(function(data) {
-	// 	//control.getData(data);
-	// 	//return data;
-	// 	//console.log(data);
-
-	// 	// var bio, bioName, bioMsg, bioPic;
-	// 	// 	bio = data.bio;
-
-	// 	// bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
-	// 	// bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	// 	// bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
-
-	// 	// $("#title").append(bioPic, bioName);
-	// 	// $("#summary").prepend(bioMsg);
-
-
-	// 	// if (bio.skills.length > 0){
-	// 	// 	$("#skills").append(HTMLskillsStart);
-	// 	// 	bio.skills.forEach(function(skill) {
-	// 	// 		var bioSkill = HTMLskills.replace("%data%", skill);
-	// 	// 		$("#skills-list").append(bioSkill);
-	// 	// 	});
-	// 	// }
-
-	// })
-	// .fail(function() {
-	// 	console.log("error");
-	// });
-
 // Control
 var control = {
 	init: function(){
 		viewBio.init();
+		viewJobs.init();
+		viewEducation.init();
 	},
 	getData: function() {
 	    return $.ajax({
@@ -103,7 +68,53 @@ var viewBio = {
 		});
 	},
 };
+var viewJobs = {
+	init: function(){
+		this.render();
+	},
+	render: function(){
+		var ajaxJobs = control.getData().done();
 
+		ajaxJobs.done(function(data){
+			var jobs, workEntry, workEmployer, workTitle, workLocation, workDates, workDescription;
+			jobs = data.jobs;
+
+			jobs.forEach(function(job){
+
+				$("#work").append(HTMLworkStart);
+				workEntry = $('.work-entry:last');
+				workEmployer = HTMLworkEmployer.replace("%data%", job.employer).replace("#",job.url);
+				workTitle = HTMLworkTitle.replace("%data%", job.title);
+				workLocation = HTMLworkLocation.replace("%data%", job.location);
+				workDates = HTMLworkDates.replace("%data%", job.dates);
+				workDescription = HTMLworkDescription.replace("%data%", job.description);
+
+				workEntry.append(workDates, workLocation, workEmployer, workTitle, workDescription);
+			});
+		});
+	}
+};
+var viewEducation = {
+	init: function(){
+		this.render();
+	},
+	render: function(){
+		var ajaxEdu = control.getData().done();
+		ajaxEdu.done(function(data){
+			var schools, educationEntry, schoolName, schoolLocation, schoolDegree, schoolDates;
+				schools = data.education;
+			for ( var school in schools ){
+				$("#education").append(HTMLschoolStart);
+				educationEntry = $('.education-entry:last');
+				schoolName = HTMLschoolName.replace("%data%", schools[school].name).replace("%link%", schools[school].url);
+				schoolDegree = HTMLschoolDegree.replace("%data%", schools[school].degree) + HTMLschoolMajor.replace("%data%", schools[school].majors);
+				schoolDates = HTMLschoolDates.replace("%data%", schools[school].date);
+				schoolLocation = HTMLschoolLocation.replace("%data%", schools[school].location);
+				educationEntry.append(schoolLocation, schoolName, schoolDegree, schoolDates);
+			}
+		});
+	}
+};
 // Initialize controller
 control.init();
 
@@ -162,120 +173,120 @@ control.init();
 	// 	}
 	// }; bio.display();
 
-	var work = {
-		"jobs": [
-		{
-			"employer": "Freelance Web Developer",
-			"title": "@Self-Employed",
-			"location": "Sao Paulo, Brazil", //\343
-			"dates": "2012 - Present",
-			"description": "ExpressionEngine builds. Front-end development.",
-			//"description": ["ExpressionEngine builds","Front-end development for agencies: entire sites, landing pages, emails"],
-			"url":"http://garabedium.com/"
-		},
-		{
-			"employer": "Sampa Housing",
-			"title": "Tech & Marketing Director",
-			"location": "Sao Paulo, Brazil",
-			"dates": "2012 - 2015",
-			"description": "Managed website. Designed and developed property lead generation site",
-			"url":"http://sampahousing.com/"
-		},
-		{
-			"employer": "Blue State Digital",
-			"title": "Digital Project Manager",
-			"location": "Washington DC, USA",
-			"dates": "2009 - 2012",
-			"description": "Managed website and app builds. Designed project scopes and budgets.",
-			"url":"http://bluestatedigital.com/"
-		}
-	],
-		"display": function(){
+	// var work = {
+	// 	"jobs": [
+	// 	{
+	// 		"employer": "Freelance Web Developer",
+	// 		"title": "@Self-Employed",
+	// 		"location": "Sao Paulo, Brazil", //\343
+	// 		"dates": "2012 - Present",
+	// 		"description": "ExpressionEngine builds. Front-end development.",
+	// 		//"description": ["ExpressionEngine builds","Front-end development for agencies: entire sites, landing pages, emails"],
+	// 		"url":"http://garabedium.com/"
+	// 	},
+	// 	{
+	// 		"employer": "Sampa Housing",
+	// 		"title": "Tech & Marketing Director",
+	// 		"location": "Sao Paulo, Brazil",
+	// 		"dates": "2012 - 2015",
+	// 		"description": "Managed website. Designed and developed property lead generation site",
+	// 		"url":"http://sampahousing.com/"
+	// 	},
+	// 	{
+	// 		"employer": "Blue State Digital",
+	// 		"title": "Digital Project Manager",
+	// 		"location": "Washington DC, USA",
+	// 		"dates": "2009 - 2012",
+	// 		"description": "Managed website and app builds. Designed project scopes and budgets.",
+	// 		"url":"http://bluestatedigital.com/"
+	// 	}
+	// ],
+	// 	"display": function(){
 
-			work.jobs.forEach(function(job){
+	// 		work.jobs.forEach(function(job){
 
-				$("#work").append(HTMLworkStart);
+	// 			$("#work").append(HTMLworkStart);
 
-				var workEntry = $('.work-entry:last');
-				var workEmployer = HTMLworkEmployer.replace("%data%", job.employer).replace("#",job.url);
-				var workTitle = HTMLworkTitle.replace("%data%", job.title);
-				var workLocation = HTMLworkLocation.replace("%data%", job.location);
-				var workDates = HTMLworkDates.replace("%data%", job.dates);
-				var workDescription = HTMLworkDescription.replace("%data%", job.description);
+	// 			var workEntry = $('.work-entry:last');
+	// 			var workEmployer = HTMLworkEmployer.replace("%data%", job.employer).replace("#",job.url);
+	// 			var workTitle = HTMLworkTitle.replace("%data%", job.title);
+	// 			var workLocation = HTMLworkLocation.replace("%data%", job.location);
+	// 			var workDates = HTMLworkDates.replace("%data%", job.dates);
+	// 			var workDescription = HTMLworkDescription.replace("%data%", job.description);
 
-				workEntry.append(workDates, workLocation, workEmployer, workTitle, workDescription);
+	// 			workEntry.append(workDates, workLocation, workEmployer, workTitle, workDescription);
 
-			});
-		}
-	}; work.display();
+	// 		});
+	// 	}
+	// }; work.display();
 
-	var education = {
-		"schools": [
-			{
-				"name": "FAAP",
-				"location": "Sao Paulo, Brazil",
-				"degree": "Portugu\352s",
-				"majors": ["Portugu\352s Para Estrangeiros"],
-				"date": "2012 - 2013",
-				"url":"http://www.faap.com.br",
-			},
-			{
-				"name": "Providence College",
-				"location": "Providence, RI",
-				"degree": "Bachelor of Arts",
-				"majors": ["Political Science"],
-				"date": "2004 - 2008",
-				"url":"http://www.providence.edu/",
-			},
-			{
-				"name": "Stellenbosch University",
-				"location": "Stellenbosch, South Africa",
-				"degree": "NA",
-				"majors": ["Political Science"],
-				"date": "2006 - 2007",
-				"url":"http://www.sun.ac.za/"
-			}
-		],
-		"onlineCourses": [
-			{
-				"school": "Udacity",
-				"title": "Front-End Web Developer Nanodegree (FEND)",
-				"date": "2016",
-				"url": "http://udacity.com/",
-				"courseURL": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-			}
-		],
-		"display": function(){
+	//var education = {
+		// "schools": [
+		// 	{
+		// 		"name": "FAAP",
+		// 		"location": "Sao Paulo, Brazil",
+		// 		"degree": "Portugu\352s",
+		// 		"majors": ["Portugu\352s Para Estrangeiros"],
+		// 		"date": "2012 - 2013",
+		// 		"url":"http://www.faap.com.br",
+		// 	},
+		// 	{
+		// 		"name": "Providence College",
+		// 		"location": "Providence, RI",
+		// 		"degree": "Bachelor of Arts",
+		// 		"majors": ["Political Science"],
+		// 		"date": "2004 - 2008",
+		// 		"url":"http://www.providence.edu/",
+		// 	},
+		// 	{
+		// 		"name": "Stellenbosch University",
+		// 		"location": "Stellenbosch, South Africa",
+		// 		"degree": "NA",
+		// 		"majors": ["Political Science"],
+		// 		"date": "2006 - 2007",
+		// 		"url":"http://www.sun.ac.za/"
+		// 	}
+		// ],
+		// "onlineCourses": [
+		// 	{
+		// 		"school": "Udacity",
+		// 		"title": "Front-End Web Developer Nanodegree (FEND)",
+		// 		"date": "2016",
+		// 		"url": "http://udacity.com/",
+		// 		"courseURL": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+		// 	}
+	// 	],
+	// 	"display": function(){
 
-			for ( var school in education.schools ){
+	// 		for ( var school in education.schools ){
 
-				$("#education").append(HTMLschoolStart);
+	// 			$("#education").append(HTMLschoolStart);
 
-				var educationEntry = $('.education-entry:last');
+	// 			var educationEntry = $('.education-entry:last');
 
-				var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("%link%", education.schools[school].url);
-				var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree) + HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-				var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
-				var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+	// 			var schoolName = HTMLschoolName.replace("%data%", education.schools[school].name).replace("%link%", education.schools[school].url);
+	// 			var schoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree) + HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+	// 			var schoolDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
+	// 			var schoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 
-				educationEntry.append(schoolLocation, schoolName, schoolDegree, schoolDates);
-			}
+	// 			educationEntry.append(schoolLocation, schoolName, schoolDegree, schoolDates);
+	// 		}
 
-			for ( var course in education.onlineCourses ) {
+	// 		for ( var course in education.onlineCourses ) {
 
-				$("#education").append(HTMLonlineClasses);
-			    $("#education").append(HTMLschoolStart);
+	// 			$("#education").append(HTMLonlineClasses);
+	// 		    $("#education").append(HTMLschoolStart);
 
-			    var educationEntry = $('.education-entry:last');
+	// 		    var educationEntry = $('.education-entry:last');
 
-			    var courseSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school).replace("%link%", education.onlineCourses[course].url);
-			    var courseTitle = HTMLonlineCourse.replace("%data%", education.onlineCourses[course].title).replace("%link%", education.onlineCourses[course].courseURL);
-			    var courseDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
-				//var courseURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-			    educationEntry.append(courseSchool, courseTitle, courseDates);
-			}
-		}
-	}; education.display();
+	// 		    var courseSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school).replace("%link%", education.onlineCourses[course].url);
+	// 		    var courseTitle = HTMLonlineCourse.replace("%data%", education.onlineCourses[course].title).replace("%link%", education.onlineCourses[course].courseURL);
+	// 		    var courseDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
+	// 			//var courseURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+	// 		    educationEntry.append(courseSchool, courseTitle, courseDates);
+	// 		}
+	// 	}
+	// }; education.display();
 
 	var projects = {
 		"projects": [
