@@ -25,68 +25,53 @@ $(document).ready(function() {
 
 // Data
 //var model =
-	$.ajax({
-		url: 'dist/js/data.min.json',
-		method: 'GET',
-		format: 'json',
-		dataType: 'json',
-	})
-	.done(function(data) {
-		//control.getData(data);
-		//return data;
-		//console.log(data);
+	// $.ajax({
+	// 	url: 'dist/js/data.min.json',
+	// 	method: 'GET',
+	// 	format: 'json',
+	// 	dataType: 'json',
+	// })
+	// .done(function(data) {
+	// 	//control.getData(data);
+	// 	//return data;
+	// 	//console.log(data);
 
-		// var bio, bioName, bioMsg, bioPic;
-		// 	bio = data.bio;
+	// 	// var bio, bioName, bioMsg, bioPic;
+	// 	// 	bio = data.bio;
 
-		// bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
-		// bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-		// bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+	// 	// bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
+	// 	// bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	// 	// bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
 
-		// $("#title").append(bioPic, bioName);
-		// $("#summary").prepend(bioMsg);
+	// 	// $("#title").append(bioPic, bioName);
+	// 	// $("#summary").prepend(bioMsg);
 
 
-		// if (bio.skills.length > 0){
-		// 	$("#skills").append(HTMLskillsStart);
-		// 	bio.skills.forEach(function(skill) {
-		// 		var bioSkill = HTMLskills.replace("%data%", skill);
-		// 		$("#skills-list").append(bioSkill);
-		// 	});
-		// }
+	// 	// if (bio.skills.length > 0){
+	// 	// 	$("#skills").append(HTMLskillsStart);
+	// 	// 	bio.skills.forEach(function(skill) {
+	// 	// 		var bioSkill = HTMLskills.replace("%data%", skill);
+	// 	// 		$("#skills-list").append(bioSkill);
+	// 	// 	});
+	// 	// }
 
-	})
-	.fail(function() {
-		console.log("error");
-	});
-
-function getData() {
-    return $.ajax({
-		url: 'dist/js/data.min.json',
-		method: 'GET',
-		format: 'json',
-		dataType: 'json',
-    });
-};
-
-function handleData(data){
-	//return data;
-};
-
-var ajax = getData().done();
-
-ajax.done(function(data){
-	console.log(data.bio)
-});
+	// })
+	// .fail(function() {
+	// 	console.log("error");
+	// });
 
 // Control
 var control = {
 	init: function(){
-		//viewBio.init();
+		viewBio.init();
 	},
-	getData: function(){
-		console.log(model.responseJSON);
-		//return model.responseJSON;
+	getData: function() {
+	    return $.ajax({
+			url: 'dist/js/data.min.json',
+			method: 'GET',
+			format: 'json',
+			dataType: 'json',
+	    });
 	},
 };
 
@@ -96,11 +81,31 @@ var viewBio = {
 		this.render();
 	},
 	render: function(){
+		var ajaxBio = control.getData().done();
+		ajaxBio.done(function(data){
+			var bio, bioName, bioMsg, bioPic;
+
+			bio = data.bio;
+			bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
+			bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+			bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+
+			$("#title").append(bioPic, bioName);
+			$("#summary").prepend(bioMsg);
+
+			if (bio.skills.length > 0){
+				$("#skills").append(HTMLskillsStart);
+				bio.skills.forEach(function(skill) {
+					var bioSkill = HTMLskills.replace("%data%", skill);
+					$("#skills-list").append(bioSkill);
+				});
+			}
+		});
 	},
 };
 
 // Initialize controller
-
+control.init();
 
 
 // JSON Data / AJAX
