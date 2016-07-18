@@ -24,7 +24,7 @@ $(document).ready(function() {
 }); // end - doc ready
 
 // Data
-var model =
+//var model =
 	$.ajax({
 		url: 'dist/js/data.min.json',
 		method: 'GET',
@@ -32,7 +32,7 @@ var model =
 		dataType: 'json',
 	})
 	.done(function(data) {
-		control.getData(data);
+		//control.getData(data);
 		//return data;
 		//console.log(data);
 
@@ -60,6 +60,25 @@ var model =
 		console.log("error");
 	});
 
+function getData() {
+    return $.ajax({
+		url: 'dist/js/data.min.json',
+		method: 'GET',
+		format: 'json',
+		dataType: 'json',
+    });
+};
+
+function handleData(data){
+	//return data;
+};
+
+var ajax = getData().done();
+
+ajax.done(function(data){
+	console.log(data.bio)
+});
+
 // Control
 var control = {
 	init: function(){
@@ -77,28 +96,6 @@ var viewBio = {
 		this.render();
 	},
 	render: function(){
-		//console.log( control.getData() );
-		//console.log(testD);
-		//console.log( control.getData() );
-		// var bio, bioName, bioMsg, bioPic;
-		// 	bio = data.bio;
-
-		// bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
-		// bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-		// bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
-
-		// $("#title").append(bioPic, bioName);
-		// $("#summary").prepend(bioMsg);
-
-
-		// if (bio.skills.length > 0){
-		// 	$("#skills").append(HTMLskillsStart);
-		// 	bio.skills.forEach(function(skill) {
-		// 		var bioSkill = HTMLskills.replace("%data%", skill);
-		// 		$("#skills-list").append(bioSkill);
-		// 	});
-		// }
-
 	},
 };
 
