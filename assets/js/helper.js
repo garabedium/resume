@@ -34,7 +34,7 @@ var HTMLprojectStart = '<article class="row project %class%"></article>';
 var HTMLprojectContent = '<div class="project-content large-4 medium-5 small-12 columns end"></div>';
 var HTMLprojectImagesStart = '<div class="project-images large-6 large-offset-1 medium-6 medium-offset-1 small-12 columns"></div>';
 var HTMLprojectTitle = '<h2>%data%</h2>';
-var HTMLprojectList = '<li>%data%</li>'; // used for role and description
+var HTMLprojectList = '<li>%data%</li>';
 var HTMLprojectRole = '<h3>Role</h3>';
 var HTMLprojectRoleStart = '<ul class="role"></ul>';
 var HTMLprojectDescription = '<h3>Description</h3><p>%data%</p>'

@@ -64,6 +64,52 @@
 			"date": "2006 - 2007",
 			"url":"http://www.sun.ac.za/"
 		}
+	],
+	"projects": [
+		{
+			"title": "Dandara Careers",
+			"images": ["assets/images/project-dandara-large@desktop.jpg"],
+			"dates": "2014",
+			"titleShort":"dandara",
+			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://killerbyt.es/' target='_blank' title='KillerBytes'>KillerBytes</a>"],
+			"description": "Careers site where users can search for and apply for jobs. Search by categories",
+			"url":"http://dandaracareers.com/"
+		},
+		{
+			"title": "FTE Leaders",
+			"images": ["assets/images/project-fteleaders-large@desktop.jpg"],
+			"dates": "2013",
+			"titleShort": "fteleaders",
+			"role": ["ExpressionEngine integration","Limited front-end development with <a href='http://trumedia.io/' target='_blank'>TruMedia</a>"],
+			"description":"Large site with diverse templates. Faceted search.",
+			"url":"http://fteleaders.org/"
+		},
+		{
+			"title": "AKC Humane Fund",
+			"images": ["assets/images/project-akc-large@desktop.jpg"],
+			"dates": "2013",
+			"titleShort": "akc",
+			"role": ["ExpressionEngine integration","Front-end development + Bootstrap"],
+			"description": "Donation site for American Kennel Club",
+			"url":"http://akchumanefund.org/"
+		},
+		{
+			"title": "AmoBikes",
+			"images": ["assets/images/project-amobikes-large@desktop.jpg"],
+			"dates": "2016",
+			"titleShort":"amobikes",
+			"role": ["Design","Front-end development + Foundation 5"],
+			"description": "Splash site for personal biking project in Brazil",
+			"url":"http://amobikes.com/"
+		},
+		{
+			"title": "Sampa Corretores",
+			"images": ["assets/images/project-sampahousing-large@desktop.jpg"],
+			"dates": "2015",
+			"titleShort": "sampahousing",
+			"role": ["Design","ExpressionEngine integration","Front-end development + Foundation 5"],
+			"description":"Realtors can register and manage properties. Admins can approve and deny property listings.",
+			"url":"http://contact.sampahousing.com/corretores/"
+		}
 	]
-
 }
