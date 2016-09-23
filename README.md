@@ -1,5 +1,5 @@
 # Resume Site
-* Javascript MVC practice that I used for my personal site: garabedium.com
+* Javascript MVC practice that I used for my personal site: [Garabedium](http://garabedium.com)
 * Responsive framework: Foundation 6 + SASS
 * Build Tool: Grunt used to generate responsive images
 * Build Tool: Gulp used to compile SASS: assets/scss/*
