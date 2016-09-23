@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"if",
+				"iife	immediately-invoked function expression"
+			],
+			[
 				"each",
 				"each	$.each()"
 			],
@@ -48,13 +52,26 @@
 			}
 		},
 		{
-			"contents": "// Refactor goals:\n/*\n	- Move data to separate json file\n	- Get rid of helper.js?\n	- Convert scrollHeader to function\n*/\n\n// Custom JS\n$(document).ready(function() {\n\n	// Animate header on scroll\n	$(window).scroll(function(){\n\n		var header = $('header#nav'); //\n		var headerHeight = header.outerHeight() + 25;\n\n		if($(window).scrollTop() > headerHeight ){\n			header.addClass('scroll');\n		} else {\n			header.removeClass('scroll');\n		}\n	});\n\n}); // end - doc ready\n\n// Data\nvar model = {\n\n};\n\n// Control: router between model and view\nvar control = function(){\n\n};\n\nvar viewBio = function()\n\n$.ajax({\n	url: 'dist/js/data.min.json',\n	method: 'GET',\n	format: 'json',\n	dataType: 'json',\n})\n.done(function(data) {\n	//console.log(data.bio.name);\n	var bio, bioName, bioMsg, bioPic;\n		bio = data.bio;\n\n	bioName = HTMLheaderName.replace(\"%data%\", bio.name) + HTMLheaderRole.replace(\"%data%\", bio.role);\n	bioMsg  = HTMLwelcomeMsg.replace(\"%data%\", bio.welcomeMessage);\n	bioPic  = HTMLbioPic.replace(\"%data%\", bio.biopic);\n\n	$(\"#title\").append(bioPic, bioName);\n	$(\"#summary\").prepend(bioMsg);\n\n\n	if (bio.skills.length > 0){\n		$(\"#skills\").append(HTMLskillsStart);\n		bio.skills.forEach(function(skill) {\n			var bioSkill = HTMLskills.replace(\"%data%\", skill);\n			$(\"#skills-list\").append(bioSkill);\n		});\n	}\n\n})\n.fail(function() {\n	console.log(\"error\");\n})\n\n\n\n// JSON Data / AJAX\n//var modBio = model.bio;\n// console.log(\n// 	//model.bio[\"name\"]\n// 	//model.bio.name\n// 	//model.bio.contacts.mobile\n// 	//modBio.name\n// );\n\n // 	var bio = {\n	// 	\"name\": \"Greg\",\n	// 	\"role\": \"Web Developer\",\n	// 	\"skills\": [\"HTML5\",\"SASS\",\"Javascript\",\"jQuery\",\"Bootstrap\",\"Foundation\",\"Git\",\"Gulp\",\"Grunt\",\"ExpressionEngine\",\"Wordpress\",\"CraftCMS\"],\n	// 	\"welcomeMessage\" : \"<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> \",\n	// 	\"biopic\" : \"assets/images/greg.jpg\",\n	// 	\"contacts\":\n	// 	{\n	// 		\"mobile\": \"tel:+55.11.96026.5146\",\n	// 		\"email\": \"mailto:garabedium@gmail.com\",\n	// 		\"github\": \"http://github.com/garabedium\",\n	// 		\"linkedin\":\"http://linkedin.com/in/garabedium\",\n	// 		\"location\": \"Sao Paulo, Brazil\"\n	// 	},\n	// 	\"display\": function(){\n\n	// 		var bioName = HTMLheaderName.replace(\"%data%\", bio.name) + HTMLheaderRole.replace(\"%data%\", bio.role);\n	// 		var bioMsg  = HTMLwelcomeMsg.replace(\"%data%\", bio.welcomeMessage);\n	// 		var bioPic  = HTMLbioPic.replace(\"%data%\", bio.biopic);\n\n	// 		$(\"#title\").append(bioPic, bioName);\n	// 		$(\"#summary\").prepend(bioMsg);\n\n	// 		if ( Object.keys(bio.contacts).length > 0 ){\n	// 			$(\"footer .contact\").prepend(HTMLcontactStart);\n	// 			//$(\"header#nav\").append(HTMLcontactStart);\n	// 			for ( var contact in bio.contacts ){\n	// 				if ( bio.contacts.hasOwnProperty(contact) ){\n	// 					var bioContact = HTMLcontactItem.replace(\"%contact%\", contact).replace(\"%data%\", bio.contacts[contact]);\n	// 					$(\".contact-info\").append(bioContact);\n\n	// 			    }\n	// 			}\n	// 		}\n\n	// 		if (bio.skills.length > 0){\n	// 			$(\"#skills\").append(HTMLskillsStart);\n	// 			bio.skills.forEach(function(skill) {\n	// 				var bioSkill = HTMLskills.replace(\"%data%\", skill);\n	// 				$(\"#skills-list\").append(bioSkill);\n	// 			});\n	// 		}\n	// 	}\n	// }; bio.display();\n\n	var work = {\n		\"jobs\": [\n		{\n			\"employer\": \"Freelance Web Developer\",\n			\"title\": \"@Self-Employed\",\n			\"location\": \"Sao Paulo, Brazil\", //\\343\n			\"dates\": \"2012 - Present\",\n			\"description\": \"ExpressionEngine builds. Front-end development.\",\n			//\"description\": [\"ExpressionEngine builds\",\"Front-end development for agencies: entire sites, landing pages, emails\"],\n			\"url\":\"http://garabedium.com/\"\n		},\n		{\n			\"employer\": \"Sampa Housing\",\n			\"title\": \"Tech & Marketing Director\",\n			\"location\": \"Sao Paulo, Brazil\",\n			\"dates\": \"2012 - 2015\",\n			\"description\": \"Managed website. Designed and developed property lead generation site\",\n			\"url\":\"http://sampahousing.com/\"\n		},\n		{\n			\"employer\": \"Blue State Digital\",\n			\"title\": \"Digital Project Manager\",\n			\"location\": \"Washington DC, USA\",\n			\"dates\": \"2009 - 2012\",\n			\"description\": \"Managed website and app builds. Designed project scopes and budgets.\",\n			\"url\":\"http://bluestatedigital.com/\"\n		}\n	],\n		\"display\": function(){\n\n			work.jobs.forEach(function(job){\n\n				$(\"#work\").append(HTMLworkStart);\n\n				var workEntry = $('.work-entry:last');\n				var workEmployer = HTMLworkEmployer.replace(\"%data%\", job.employer).replace(\"#\",job.url);\n				var workTitle = HTMLworkTitle.replace(\"%data%\", job.title);\n				var workLocation = HTMLworkLocation.replace(\"%data%\", job.location);\n				var workDates = HTMLworkDates.replace(\"%data%\", job.dates);\n				var workDescription = HTMLworkDescription.replace(\"%data%\", job.description);\n\n				workEntry.append(workDates, workLocation, workEmployer, workTitle, workDescription);\n\n			});\n		}\n	}; work.display();\n\n	var education = {\n		\"schools\": [\n			{\n				\"name\": \"FAAP\",\n				\"location\": \"Sao Paulo, Brazil\",\n				\"degree\": \"Portugu\\352s\",\n				\"majors\": [\"Portugu\\352s Para Estrangeiros\"],\n				\"date\": \"2012 - 2013\",\n				\"url\":\"http://www.faap.com.br\",\n			},\n			{\n				\"name\": \"Providence College\",\n				\"location\": \"Providence, RI\",\n				\"degree\": \"Bachelor of Arts\",\n				\"majors\": [\"Political Science\"],\n				\"date\": \"2004 - 2008\",\n				\"url\":\"http://www.providence.edu/\",\n			},\n			{\n				\"name\": \"Stellenbosch University\",\n				\"location\": \"Stellenbosch, South Africa\",\n				\"degree\": \"NA\",\n				\"majors\": [\"Political Science\"],\n				\"date\": \"2006 - 2007\",\n				\"url\":\"http://www.sun.ac.za/\"\n			}\n		],\n		\"onlineCourses\": [\n			{\n				\"school\": \"Udacity\",\n				\"title\": \"Front-End Web Developer Nanodegree (FEND)\",\n				\"date\": \"2016\",\n				\"url\": \"http://udacity.com/\",\n				\"courseURL\": \"https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001\"\n			}\n		],\n		\"display\": function(){\n\n			for ( var school in education.schools ){\n\n				$(\"#education\").append(HTMLschoolStart);\n\n				var educationEntry = $('.education-entry:last');\n\n				var schoolName = HTMLschoolName.replace(\"%data%\", education.schools[school].name).replace(\"%link%\", education.schools[school].url);\n				var schoolDegree = HTMLschoolDegree.replace(\"%data%\", education.schools[school].degree) + HTMLschoolMajor.replace(\"%data%\", education.schools[school].majors);\n				var schoolDates = HTMLschoolDates.replace(\"%data%\", education.schools[school].date);\n				var schoolLocation = HTMLschoolLocation.replace(\"%data%\", education.schools[school].location);\n\n				educationEntry.append(schoolLocation, schoolName, schoolDegree, schoolDates);\n			}\n\n			for ( var course in education.onlineCourses ) {\n\n				$(\"#education\").append(HTMLonlineClasses);\n			    $(\"#education\").append(HTMLschoolStart);\n\n			    var educationEntry = $('.education-entry:last');\n\n			    var courseSchool = HTMLonlineSchool.replace(\"%data%\", education.onlineCourses[course].school).replace(\"%link%\", education.onlineCourses[course].url);\n			    var courseTitle = HTMLonlineCourse.replace(\"%data%\", education.onlineCourses[course].title).replace(\"%link%\", education.onlineCourses[course].courseURL);\n			    var courseDates = HTMLonlineDates.replace(\"%data%\", education.onlineCourses[course].date);\n				//var courseURL = HTMLonlineURL.replace(\"%data%\", education.onlineCourses[course].url);\n			    educationEntry.append(courseSchool, courseTitle, courseDates);\n			}\n		}\n	}; education.display();\n\n	var projects = {\n		\"projects\": [\n		{\n			\"title\": \"Dandara Careers\",\n			\"images\": [\"assets/images/project-dandara-large@desktop.jpg\"],\n			\"dates\": \"2014\",\n			\"titleShort\":\"dandara\",\n			\"role\": [\"ExpressionEngine integration\",\"Limited front-end development with <a href='http://killerbyt.es/' target='_blank' title='KillerBytes'>KillerBytes</a>\"],\n			\"description\": \"Careers site where users can search for and apply for jobs. Search by categories\",\n			\"url\":\"http://dandaracareers.com/\"\n		},\n		{\n			\"title\": \"FTE Leaders\",\n			\"images\": [\"assets/images/project-fteleaders-large@desktop.jpg\"],\n			\"dates\": \"2013\",\n			\"titleShort\": \"fteleaders\",\n			\"role\": [\"ExpressionEngine integration\",\"Limited front-end development with <a href='http://trumedia.io/' target='_blank'>TruMedia</a>\"],\n			\"description\":\"Large site with diverse templates. Faceted search.\",\n			\"url\":\"http://fteleaders.org/\"\n		},\n		{\n			\"title\": \"AKC Humane Fund\",\n			\"images\": [\"assets/images/project-akc-large@desktop.jpg\"],\n			\"dates\": \"2013\",\n			\"titleShort\": \"akc\",\n			\"role\": [\"ExpressionEngine integration\",\"Front-end development + Bootstrap\"],\n			\"description\": \"Donation site for American Kennel Club\",\n			\"url\":\"http://akchumanefund.org/\"\n		},\n		{\n			\"title\": \"AmoBikes\",\n			\"images\": [\"assets/images/project-amobikes-large@desktop.jpg\"],\n			\"dates\": \"2016\",\n			\"titleShort\":\"amobikes\", // used for article class and images\n			\"role\": [\"Design\",\"Front-end development + Foundation 5\"],\n			\"description\": \"Splash site for personal biking project in Brazil\",\n			\"url\":\"http://amobikes.com/\"\n		},\n		{\n			\"title\": \"Sampa Corretores\",\n			\"images\": [\"assets/images/project-sampahousing-large@desktop.jpg\"],\n			//,\"assets/images/project-sampahousing-1\",\"assets/images/project-sampahousing-2\"],\n			\"dates\": \"2015\",\n			\"titleShort\": \"sampahousing\",\n			\"role\": [\"Design\",\"ExpressionEngine integration\",\"Front-end development + Foundation 5\"],\n			\"description\":\"Realtors can register and manage properties. Admins can approve and deny property listings.\",\n			//\"description\":[\"Realtors can register and manage properties\",\"Admins can approve or deny property listings\"],\n			\"url\":\"http://contact.sampahousing.com/corretores/\"\n		}\n	],\n		\"display\": function(){\n\n			for( var project in projects.projects ) {\n\n				var projectEntry = HTMLprojectStart.replace(\"%class%\", projects.projects[project].titleShort);\n				$(\"main.portfolio section\").append(projectEntry);\n				$(\".project:last\").append(HTMLprojectContent);\n\n				// Project Content Column\n				var projectTitle = HTMLprojectTitle.replace(\"%data%\", projects.projects[project].title);\n				$(\".project-content:last\").append(projectTitle);\n\n				// Project Role\n				if ( projects.projects[project].role.length > 0 ){\n\n					$(\".project-content:last\").append(HTMLprojectRole, HTMLprojectRoleStart);\n\n					projects.projects[project].role.forEach(function(item){\n						projectRole = HTMLprojectList.replace(\"%data%\", item);\n						$(\".role:last\").append(projectRole);\n					});\n\n				}\n\n				// Project Description\n\n				//$(\".project-content:last\").append(HTMLprojectHighlightsStart);\n				var projectDescription = HTMLprojectDescription.replace(\"%data%\", projects.projects[project].description);\n				$(\".project-content:last\").append(projectDescription);\n\n				// Images\n				if (projects.projects[project].images.length > 0){\n\n					$(\".project:last\").prepend(HTMLprojectImagesStart);\n					//$(\".project-images:last\").prepend(HTMLprojectImage);\n\n					projects.projects[project].images.forEach(function(item){\n						var projectImage = HTMLprojectImage.replace(\"%data%\", item).replace(\"%title%\", projects.projects[project].title);\n						$(\".project-images:last\").append(projectImage);\n					});\n				}\n\n				var projectDates = HTMLprojectDates.replace(\"%data%\", projects.projects[project].dates);\n				var projectUrl = HTMLprojectURL.replace(\"%data%\", projects.projects[project].url).replace(\"%title%\", projects.projects[project].title);\n				$(\".project-images:last\").append(projectUrl, projectDates);\n\n\n			}\n		}\n	}; projects.display();\n\n",
 			"file": "assets/js/app.js",
-			"file_size": 11476,
-			"file_write_time": 131131714410000000,
 			"settings":
 			{
-				"buffer_size": 11492,
+				"buffer_size": 5027,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1931,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "assets/js/helper.js",
+			"settings":
+			{
+				"buffer_size": 2204,
 				"line_ending": "Unix"
 			}
 		},
@@ -62,17 +79,9 @@
 			"file": "assets/js/data.json",
 			"settings":
 			{
-				"buffer_size": 1569,
+				"buffer_size": 4138,
 				"line_ending": "Unix",
 				"name": "data.js"
-			}
-		},
-		{
-			"file": "assets/js/helper.js",
-			"settings":
-			{
-				"buffer_size": 2237,
-				"line_ending": "Unix"
 			}
 		},
 		{
@@ -99,7 +108,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 291.0,
+		"height": 354.0,
 		"last_filter": "",
 		"selected_items":
 		[
@@ -192,7 +201,7 @@
 				"View: Toggle Open Files in Side Bar"
 			]
 		],
-		"width": 449.0
+		"width": 431.0
 	},
 	"console":
 	{
@@ -358,6 +367,7 @@
 		"height": 223.0,
 		"where_history":
 		[
+			"<currentfile>",
 			""
 		]
 	},
@@ -366,6 +376,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" #col-wrapper.step3 #contribution > table > tbody > tr:first-child > tr > table > tbody > tr:first-child + tr + tr",
+			"#col-wrapper.step2 #contribution > table > tbody > tr:first-child > tr > table > tbody > tr:first-child + tr, #col-wrapper.step2 #contribution > table > tbody > tr:first-child > tr > table > tbody > tr:first-child + tr + tr",
+			"#col-wrapper #contribution > table > tbody > tr:first-child > tr > table > tbody > tr",
+			"display: none",
+			"showhide",
+			"showHideNextBtn",
+			"credit",
+			"modules",
+			"src=\"//",
+			"s.bsd",
+			"file",
+			"projects.projects",
+			"\n			for( var project in projects.projects ) {\n\n				var projectEntry = HTMLprojectStart.replace(\"%class%\", projects.projects[project].titleShort);\n				$(\"main.portfolio section\").append(projectEntry);\n				$(\".project:last\").append(HTMLprojectContent);\n\n				// Project Content Column\n				var projectTitle = HTMLprojectTitle.replace(\"%data%\", projects.projects[project].title);\n				$(\".project-content:last\").append(projectTitle);\n\n				// Project Role\n				if ( projects.projects[project].role.length > 0 ){\n\n					$(\".project-content:last\").append(HTMLprojectRole, HTMLprojectRoleStart);\n\n					projects.projects[project].role.forEach(function(item){\n						projectRole = HTMLprojectList.replace(\"%data%\", item);\n						$(\".role:last\").append(projectRole);\n					});\n\n				}\n\n				// Project Description\n\n				//$(\".project-content:last\").append(HTMLprojectHighlightsStart);\n				var projectDescription = HTMLprojectDescription.replace(\"%data%\", projects.projects[project].description);\n				$(\".project-content:last\").append(projectDescription);\n\n				// Images\n				if (projects.projects[project].images.length > 0){\n\n					$(\".project:last\").prepend(HTMLprojectImagesStart);\n					//$(\".project-images:last\").prepend(HTMLprojectImage);\n\n					projects.projects[project].images.forEach(function(item){\n						var projectImage = HTMLprojectImage.replace(\"%data%\", item).replace(\"%title%\", projects.projects[project].title);\n						$(\".project-images:last\").append(projectImage);\n					});\n				}\n\n				var projectDates = HTMLprojectDates.replace(\"%data%\", projects.projects[project].dates);\n				var projectUrl = HTMLprojectURL.replace(\"%data%\", projects.projects[project].url).replace(\"%title%\", projects.projects[project].title);\n				$(\".project-images:last\").append(projectUrl, projectDates);\n\n			}",
+			"projects.projects",
+			"education.schools",
 			"favicon",
 			"loadWiki",
 			"oh the places",
@@ -478,22 +503,7 @@
 			"section",
 			"file",
 			"section-highli",
-			"section-highlith",
-			"description",
-			"section-highlight",
-			"what-we-do",
-			"starburst",
-			"show-for-small",
-			"src",
-			".src",
-			"img",
-			"magenta",
-			"class=\"map-poly\"",
-			"first-of-typ",
-			";\n",
-			"@",
-			"tablet",
-			"hide-for"
+			"section-highlith"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -501,6 +511,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"src=\"http://",
+			"projects",
+			"schools",
 			"assets/images/",
 			"",
 			"'",
@@ -553,7 +566,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -569,8 +582,8 @@
 						"selection":
 						[
 							[
-								260,
-								262
+								927,
+								927
 							]
 						],
 						"settings":
@@ -579,10 +592,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 234.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -591,15 +604,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11492,
+						"buffer_size": 5027,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								588,
-								588
+								1465,
+								1319
 							]
 						],
 						"settings":
@@ -608,27 +621,86 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 128.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "assets/js/data.json",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1569,
+						"buffer_size": 1931,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								727,
-								727
+								1867,
+								1867
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "assets/js/helper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								312,
+								312
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 39.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "assets/js/data.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4138,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								4138
 							]
 						],
 						"settings":
@@ -641,41 +713,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "assets/js/helper.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1115,
-								1115
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "gulpfile.js",
 					"semi_transient": false,
 					"settings":
@@ -701,11 +743,11 @@
 						"translation.y": 189.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "/Users/greg/Sites/udacity/ajax/js/script.js",
 					"semi_transient": false,
 					"settings":
@@ -731,7 +773,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -879,9 +921,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "harring",
+		"last_filter": "text",
 		"selected_items":
 		[
+			[
+				"text",
+				"~/Sites/udacity/javascript/text-twist/text-twist.sublime-project"
+			],
+			[
+				"udac",
+				"~/Sites/udacity/udacity.sublime-project"
+			],
 			[
 				"harring",
 				"~/Sites/harrington-agency/harrington.sublime-project"
@@ -897,10 +947,6 @@
 			[
 				"harr",
 				"~/Sites/harrington-agency/harrington.sublime-project"
-			],
-			[
-				"udac",
-				"~/Sites/udacity/udacity.sublime-project"
 			],
 			[
 				"harrin",
@@ -933,8 +979,8 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 316.0,
+	"side_bar_visible": false,
+	"side_bar_width": 244.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

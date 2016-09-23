@@ -1,27 +1,9 @@
-// Refactor goals:
+// MVC Resume
 /*
-	- Move data to separate json file
-	- Get rid of helper.js?
-	- Convert scrollHeader to function
+	Model: data.json
+	Views: Bio, Work, Portfolio etc.
+	Control: Communicates between model and views
 */
-
-// Custom JS
-$(document).ready(function() {
-
-	// Animate header on scroll
-	$(window).scroll(function(){
-
-		var header = $('header#nav'); //
-		var headerHeight = header.outerHeight() + 25;
-
-		if($(window).scrollTop() > headerHeight ){
-			header.addClass('scroll');
-		} else {
-			header.removeClass('scroll');
-		}
-	});
-
-}); // end - doc ready
 
 // Control
 var control = {
@@ -30,6 +12,7 @@ var control = {
 		viewJobs.init();
 		viewEducation.init();
 		viewPortfolio.init();
+		this.scrollHeader();
 	},
 	getData: function() {
 	    return $.ajax({
@@ -39,8 +22,19 @@ var control = {
 			dataType: 'json',
 	    });
 	},
+	scrollHeader: function(){
+		$(window).scroll(function(){
+			var header, headerHeight;
+			header = $('header#nav'); //
+			headerHeight = header.outerHeight() + 25;
+			if($(window).scrollTop() > headerHeight ){
+				header.addClass('scroll');
+			} else {
+				header.removeClass('scroll');
+			}
+		});
+	}
 };
-
 // Views
 var viewBio = {
 	init: function(){
@@ -116,7 +110,6 @@ var viewEducation = {
 		});
 	}
 };
-
 var viewPortfolio = {
 	init: function(){
 		this.render();
