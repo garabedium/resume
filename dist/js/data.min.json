@@ -2,8 +2,8 @@
 	"bio": {
 		"name": "Greg",
 		"role": "Web Developer",
-		"skills": ["Javascript","jQuery","KnockoutJS","AJAX","Jasmine","HTML5","SASS","Bootstrap","CSS","Foundation","Git","Gulp","Grunt","ExpressionEngine","Wordpress","CraftCMS"],
-		"welcomeMessage": "<p>Once upon a time I built websites with framesets and lots of help from Macromedia: Dreamweaver, Fireworks and Flash.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
+		"skills": ["Javascript","jQuery","KnockoutJS","AJAX","Jasmine","HTML5","SASS","CSS3","Git","Gulp","Grunt","Bootstrap","Foundation","ExpressionEngine","Wordpress","CraftCMS"],
+		"welcomeMessage": "<p>Once upon a time I built websites with framesets and lots of help from Macromedia.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
 		"biopic": "assets/images/greg.jpg",
 		"contacts": {
 			"mobile": "tel:+55.11.96026.5146",
@@ -19,7 +19,7 @@
 			"title": "@Self-Employed",
 			"location": "Sao Paulo, Brazil",
 			"dates": "2012 - Present",
-			"description": "Front-end development for agencies. ExpressionEngine builds, maintenance.",
+			"description": "Front-end development for agencies. ExpressionEngine builds, maintenance. Personal projects.",
 			"url":"http://garabedium.com/"
 		},
 		{
@@ -41,10 +41,18 @@
 	],
 	"education": [
 		{
+			"name": "Udacity",
+			"location": "Remote",
+			"degree": "Front-End Web Developer Nanodegree",
+			"majors": "Javascript",
+			"date": "2016",
+			"url":"https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+		},
+		{
 			"name": "FAAP",
 			"location": "Sao Paulo, Brazil",
 			"degree": "Portugues",
-			"majors": ["Portugues Para Estrangeiros"],
+			"majors": "Portugues Para Estrangeiros",
 			"date": "2012 - 2013",
 			"url":"http://www.faap.com.br"
 		},
@@ -52,7 +60,7 @@
 			"name": "Providence College",
 			"location": "Providence, RI",
 			"degree": "Bachelor of Arts",
-			"majors": ["Political Science"],
+			"majors": "Political Science",
 			"date": "2004 - 2008",
 			"url":"http://www.providence.edu/"
 		},
@@ -60,7 +68,7 @@
 			"name": "Stellenbosch University",
 			"location": "Stellenbosch, South Africa",
 			"degree": "NA",
-			"majors": ["Political Science"],
+			"majors": "Political Science",
 			"date": "2006 - 2007",
 			"url":"http://www.sun.ac.za/"
 		}

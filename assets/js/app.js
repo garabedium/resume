@@ -46,9 +46,9 @@ var viewBio = {
 			var bio, bioName, bioMsg, bioPic;
 
 			bio = data.bio;
-			bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
+			//bioName = HTMLheaderName.replace("%data%", bio.name) + HTMLheaderRole.replace("%data%", bio.role);
 			bioMsg  = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-			bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
+			//bioPic  = HTMLbioPic.replace("%data%", bio.biopic);
 
 			$("#title").append(bioPic, bioName);
 			$("#summary").prepend(bioMsg);
