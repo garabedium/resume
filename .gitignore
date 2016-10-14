@@ -3,3 +3,12 @@ node_modules
 /js/foundation
 /garabedium.sublime-project
 /garabedium.sublime-workspace
+
+/projects/text-twister/node_modules
+/projects/text-twister/src
+/projects/text-twister/.git
+/projects/text-twister/.gitignore
+/projects/text-twister/dev.html
+/projects/text-twister/ROADMAP-BUGS.md
+/projects/text-twister/validate-json.js
+/projects/text-twister/dist/svg
