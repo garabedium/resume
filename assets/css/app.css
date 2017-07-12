@@ -3143,7 +3143,7 @@ header#nav {
       header#nav nav li {
         margin-right: .2rem; } }
     header#nav nav li#logo a {
-      background-color: #d0863e;
+      background-color: #ff8300;
       color: #fefefe;
       font-size: 32px;
       padding: 0px 10px 10px;
@@ -3283,7 +3283,7 @@ main.resume #title img {
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  border: solid 4px #e9c6a5;
+  border: solid 4px #ffc180;
   width: 100px; }
 
 main.resume #summary {
@@ -3300,7 +3300,7 @@ main.resume .item {
     font-size: 1.3rem;
     margin-bottom: 0; }
     main.resume .item h2 a {
-      color: #d59251; }
+      color: #ff8f1a; }
   main.resume .item h3 {
     font-size: .9rem;
     font-style: italic;
@@ -3311,8 +3311,8 @@ main.resume .item {
     border-top: solid 4px #e6e6e6;
     border-bottom: solid 4px #e6e6e6; }
     main.resume .item header.present {
-      border-top: solid 4px #fc6061;
-      border-bottom: solid 4px #fc6061; }
+      border-top: solid 4px #ff9c33;
+      border-bottom: solid 4px #ff9c33; }
     main.resume .item header h4 {
       font-size: 16px;
       margin-bottom: 0; }
@@ -3354,7 +3354,7 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 35px;
+  height: 40px;
   text-align: center;
   border-bottom: solid 5px #0367a6; }
   footer .contact .contact-info li:last-child {

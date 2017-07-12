@@ -275,8 +275,8 @@ main {
 				border-top: solid 4px $light-gray;
 				border-bottom: solid 4px $light-gray;
 				&.present {
-					border-top: solid 4px $tertiary-color;
-					border-bottom: solid 4px $tertiary-color;
+					border-top: solid 4px lighten($roarange, 10%);
+					border-bottom: solid 4px lighten($roarange, 10%);
 				}
 				h4 {
 					font-size: 16px;
