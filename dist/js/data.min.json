@@ -2,7 +2,7 @@
 	"bio": {
 		"name": "Greg",
 		"role": "Web Developer",
-		"skills": ["Javascript","jQuery","KnockoutJS","AJAX","Jasmine","HTML5","SASS","CSS3","Git","Gulp","Grunt","Bootstrap","Foundation","ExpressionEngine","Wordpress","CraftCMS"],
+		"skills": ["Javascript","jQuery","KnockoutJS","AJAX","PHP","MySQL","Jasmine","HTML5","SASS","CSS3","Git","Gulp","Grunt","Bootstrap","Foundation","ExpressionEngine","Wordpress","CraftCMS"],
 		"welcomeMessage": "<p>Once upon a time I built websites with framesets and lots of help from Macromedia.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
 		"biopic": "assets/images/greg.jpg",
 		"contacts": {
