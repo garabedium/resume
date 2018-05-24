@@ -1,8 +1,10 @@
 node_modules
 /scss/bower_components
 /js/foundation
-/garabedium.sublime-project
-/garabedium.sublime-workspace
+garabedium.sublime-project
+garabedium.sublime-workspace
+*.sublime-workspace
+*.sublime-project
 
 /projects/text-twister/node_modules
 /projects/text-twister/src
