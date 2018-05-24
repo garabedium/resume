@@ -152,9 +152,9 @@ var viewPortfolio = {
 					});
 				}
 
-				var projectDates = HTMLprojectDates.replace("%data%", projects[project].dates);
+				// var projectDates = HTMLprojectDates.replace("%data%", projects[project].dates);
 				var projectUrl = HTMLprojectURL.replace("%data%", projects[project].url).replace("%title%", projects[project].title);
-				$(".project-images:last").append(projectUrl, projectDates);
+				$(".project-images:last").append(projectUrl);
 
 			}
 		});

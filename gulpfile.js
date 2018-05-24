@@ -42,7 +42,6 @@ gulp.task('foundation', function() {
 gulp.task('clean-css', function() {
   return gulp.src('./assets/css/*.css')
   	.pipe(rename({ suffix: '.min' }))
-    //.pipe(rev())
     .pipe(cleanCSS())
     .pipe(gulp.dest('./dist/css'))
 });

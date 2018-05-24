@@ -15,6 +15,13 @@
   },
   "jobs": [
     {
+      "employer": "Launch Academy",
+      "title": "Jr. Full-stack Web Developer",
+      "location": "Boston",
+      "dates": "2018",
+      "description": "Graduated from Launch Academy's 18-week Full-stack programming bootcamp.",
+      "url":"https://launchacademy.com/"
+    },    {
       "employer": "Freelance Web Developer",
       "title": "@Self-Employed",
       "location": "Boston (current), Brazil",
