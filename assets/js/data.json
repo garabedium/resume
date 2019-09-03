@@ -6,11 +6,9 @@
     "welcomeMessage": "<p>Once upon a time I built websites with framesets and lots of help from Macromedia.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
     "biopic": "assets/images/greg.jpg",
     "contacts": {
-      "mobile": "tel:+55.11.96026.5146",
-      "email": "mailto:garabedium@gmail.com",
       "github": "http://github.com/garabedium",
       "linkedin": "http://linkedin.com/in/garabedium",
-      "location": "Sao Paulo, Brazil"
+      "location": "Boston, MA"
     }
   },
   "jobs": [
@@ -35,7 +33,7 @@
       "title": "@Self-Employed",
       "location": "Boston, Brazil",
       "dates": "2012 - 2018",
-      "description": "Front-end development for agencies. ExpressionEngine builds, maintenance. Personal projects.",
+      "description": "Front-end development for agencies. ExpressionEngine / CMS builds, maintenance. Personal projects.",
       "url":"http://garabedium.com/"
     },
     {
@@ -65,31 +63,23 @@
       "url":"https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     },
     {
-      "name": "FAAP",
-      "location": "Sao Paulo, Brazil",
-      "degree": "Portugues",
-      "majors": "Portugues Para Estrangeiros",
-      "date": "2012 - 2013",
-      "url":"http://www.faap.com.br"
-    },
-    {
       "name": "Providence College",
       "location": "Providence, RI",
       "degree": "Bachelor of Arts",
       "majors": "Political Science",
       "date": "2004 - 2008",
       "url":"http://www.providence.edu/"
-    },
-    {
-      "name": "Stellenbosch University",
-      "location": "Stellenbosch, South Africa",
-      "degree": "NA",
-      "majors": "Political Science",
-      "date": "2006 - 2007",
-      "url":"http://www.sun.ac.za/"
     }
   ],
   "projects": [
+    {
+      "title": "Ace the Interview",
+      "images": ["assets/images/project-ace-the-interview@desktop.png"],
+      "titleShort":"amobikes",
+      "role": ["Designed site","Built React frontend","Built Rails backend"],
+      "description": "Capstone 'breakable toy' project for Launch Academy. React on Rails app to prep for job interview questions.",
+      "url":"https://acetheinterview.herokuapp.com/"
+    },    
     {
       "title": "Dandara Careers",
       "images": ["assets/images/project-dandara-large@desktop.jpg"],
@@ -123,8 +113,8 @@
       "dates": "2016",
       "titleShort":"amobikes",
       "role": ["Design","Front-end development + Foundation 5"],
-      "description": "Splash site for personal biking project in Brazil",
-      "url":"http://amobikes.com/"
+      "description": "Splash site for personal biking project in Brazil. (No longer online)",
+      "url":"#"
     },
     {
       "title": "Sampa Corretores",
@@ -132,8 +122,8 @@
       "dates": "2015",
       "titleShort": "sampahousing",
       "role": ["Design","ExpressionEngine integration","Front-end development + Foundation 5"],
-      "description":"Realtors can register and manage properties. Admins can approve and deny property listings.",
-      "url":"http://contact.sampahousing.com/corretores/"
+      "description":"Built lead generation site (backend, frontend) where realtors can register and manage properties. Admins can approve and deny property listings. (No longer online)",
+      "url":"#"
     }
   ]
 }
