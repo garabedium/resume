@@ -2,7 +2,7 @@
   "bio": {
     "name": "Greg",
     "role": "Web Developer",
-    "skills": ["JavaScript","React","Ruby","Rails","Active Record","PostgreSQL","Rspec","Capybara","jQuery","AJAX","MySQL","Jasmine","HTML5","SASS","CSS3","Git","Gulp","Grunt","Bootstrap","Foundation","ExpressionEngine","Wordpress"],
+    "skills": ["JavaScript","React","Ruby","Rails","Active Record","Elasticsearch","PostgreSQL","Rspec","Capybara","jQuery","AJAX","MySQL","Jasmine","HTML5","SASS","CSS3","Git","Gulp","Grunt","Bootstrap","Foundation","ExpressionEngine","Wordpress"],
     "welcomeMessage": "<p>Once upon a time I built websites with framesets and lots of help from Macromedia.</p><p>The web has evolved a great deal since those days and thankfully, so have my skills.</p> ",
     "biopic": "assets/images/greg.jpg",
     "contacts": {
@@ -15,17 +15,26 @@
   },
   "jobs": [
     {
+      "employer": "CarNow",
+      "title": "Software Engineer",
+      "location": "Boston",
+      "dates": "2018 - Present",
+      "description": "Fullstack software engineer (Rails, AngularJS, MySQL).",
+      "url":"https://carnow.com/"
+    },
+    {
       "employer": "Launch Academy",
       "title": "Jr. Full-stack Web Developer",
       "location": "Boston",
       "dates": "2018",
       "description": "Graduated from Launch Academy's 18-week Full-stack programming bootcamp.",
       "url":"https://launchacademy.com/"
-    },    {
+    },
+    {
       "employer": "Freelance Web Developer",
       "title": "@Self-Employed",
-      "location": "Boston (current), Brazil",
-      "dates": "2012 - Present",
+      "location": "Boston, Brazil",
+      "dates": "2012 - 2018",
       "description": "Front-end development for agencies. ExpressionEngine builds, maintenance. Personal projects.",
       "url":"http://garabedium.com/"
     },
