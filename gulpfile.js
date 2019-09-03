@@ -48,7 +48,7 @@ gulp.task('clean-css', function() {
 
 // Watch Tasks
 gulp.task('default',function() {
-    gulp.watch('./assets/scss/**/*.scss',['styles','clean-css']);
-    gulp.watch('./assets/js/*.*',['scripts']);
-    gulp.watch('./assets/js/foundation/*.js',['foundation']);
+    gulp.watch('./assets/scss/**/*.scss', gulp.series('styles','clean-css'));
+    gulp.watch('./assets/js/*.*',gulp.series('scripts'));
+    gulp.watch('./assets/js/foundation/*.js',gulp.series('foundation'));
 });
