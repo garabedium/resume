@@ -16,3 +16,4 @@ garabedium.sublime-workspace
 /projects/text-twister/dist/svg
 
 .DS_STORE
+.env
