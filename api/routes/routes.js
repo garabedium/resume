@@ -1,9 +1,14 @@
 'use strict';
 module.exports = function(app) {
-  var test = require('../controllers/testController')
+  var controller = require('../controllers/controller')
 
-  // todoList Routes
-  app.route('/api')
-    .get(test.data)
+  // app.route('/api')
+  //   .get(controller.data)
+
+  // Validate word:
+  app.route('/api/word/:wordId')
+  .get(controller.get_word)
+
+  // Get Level word
 
 }
