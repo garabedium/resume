@@ -9,13 +9,10 @@ exports.get_word = function(req, res) {
   });
 };
 
-// exports.data = function(req, res) {
-//   console.log('return some data');
-//   var test = {lorem:'ipsum'}
-//   res.json(test);  
-  // res.writeHead(200, {'Content-Type': 'text/plain'});
-  // var message = 'It works!\n',
-  //     version = 'NodeJS ' + process.versions.node + '\n',
-  //     response = [message, version].join('\n');
-  // res.end(response);
-// };
+exports.validate_word = function(req, res) {
+  Model.getWord(req.params.word, function(err, word) {
+    if (err)
+      res.send(err);
+    res.json(word);
+  });
+}

@@ -17,4 +17,15 @@ Word.getWordById = function (wordId, result) {
   });
 };
 
+Word.getWord = function (word, result) {
+  sql.query("Select id, word from dictionary where word = ? ", word, function (err, res) {             
+    if(err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      result(null, res);
+    }
+  });
+};
+
 module.exports= Word;

@@ -5,9 +5,13 @@ module.exports = function(app) {
   // app.route('/api')
   //   .get(controller.data)
 
-  // Validate word:
-  app.route('/api/word/:wordId')
+  // Get word by id:
+  app.route('/api/word/id/:wordId')
   .get(controller.get_word)
+
+  // Get word:
+  app.route('/api/word/:word')
+  .get(controller.validate_word)
 
   // Get Level word
 
