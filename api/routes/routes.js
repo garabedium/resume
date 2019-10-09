@@ -2,17 +2,15 @@
 module.exports = function(app) {
   var controller = require('../controllers/controller')
 
-  // app.route('/api')
-  //   .get(controller.data)
-
   // Get word by id:
   app.route('/api/word/id/:wordId')
-  .get(controller.get_word)
+  .get(controller.getWord)
 
-  // Get word:
+  //  Validate word:
   app.route('/api/word/:word')
-  .get(controller.validate_word)
+  .get(controller.validateWord)
 
   // Get Level word
-
+  app.route('/api/levelWord/:word')
+  .get(controller.getLevelWord)
 }
