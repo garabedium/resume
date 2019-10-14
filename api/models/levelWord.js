@@ -18,4 +18,23 @@ LevelWord.getLevelWord = function (word, result) {
   });
 };
 
+LevelWord.getRandomLevelWord = function (result) {
+  sql.query(`
+    SELECT w.word, w.frequency
+    FROM level_words AS w
+    INNER JOIN
+        (SELECT ROUND( RAND() *  (SELECT MAX(id) FROM level_words )) AS id) AS x
+    WHERE
+        w.id >= x.id
+    LIMIT 10
+  `, function(err, res){
+    if(err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      result(null, res);
+    }
+  });
+};
+
 module.exports= LevelWord;

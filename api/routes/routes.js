@@ -13,4 +13,10 @@ module.exports = function(app) {
   // Get Level word
   app.route('/api/levelWord/:word')
   .get(controller.getLevelWord)
+
+  // Get Random Level word
+  app.route('/api/random')
+  .get(controller.getRandomLevelWord)
+
 }
+
