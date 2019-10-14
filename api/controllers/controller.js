@@ -25,3 +25,11 @@ exports.getLevelWord = function(req, res) {
     res.json(word);
   });
 }
+
+exports.getRandomLevelWord = function(req, res) {
+  LevelWord.getRandomLevelWord(function(err, word) {
+    if (err)
+      res.send(err);
+    res.json(word);
+  });
+}
