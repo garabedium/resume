@@ -2,6 +2,7 @@
 const Word = require('../models/word');
 const LevelWord = require('../models/levelWord');
 
+// Word APIs:
 exports.getWord = function(req, res) {
   Word.getWordById(req.params.wordId, function(err, word) {
     if (err)
@@ -11,15 +12,16 @@ exports.getWord = function(req, res) {
 };
 
 exports.validateWord = function(req, res) {
-  Word.getWord(req.params.word, function(err, word) {
+  Word.validate(req.params.word, function(err, word) {
     if (err)
       res.send(err);
     res.json(word);
   });
 }
 
-exports.getLevelWord = function(req, res) {
-  LevelWord.getLevelWord(req.params.word, function(err, word) {
+// LevelWord APIs:
+exports.validateLevelWord = function(req, res) {
+  LevelWord.validate(req.params.word, function(err, word) {
     if (err)
       res.send(err);
     res.json(word);
@@ -27,7 +29,15 @@ exports.getLevelWord = function(req, res) {
 }
 
 exports.getRandomLevelWord = function(req, res) {
-  LevelWord.getRandomLevelWord(function(err, word) {
+  LevelWord.random(function(err, word) {
+    if (err)
+      res.send(err);
+    res.json(word);
+  });
+}
+
+exports.getLevelWordsByRange = function(req, res) {
+  LevelWord.randomByRange(req.params.min, req.params.max, function(err, word) {
     if (err)
       res.send(err);
     res.json(word);
