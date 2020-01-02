@@ -7,7 +7,7 @@ var Word = function(word){
 };
 
 Word.getWordById = function (wordId, result) {
-  sql.query("Select word from dictionary where id = ? ", wordId, function (err, res) {             
+  sql.query("SELECT word FROM dictionary WHERE id = ? ", wordId, function (err, res) {             
     if(err) {
       console.log("error: ", err);
       result(err, null);
@@ -17,8 +17,8 @@ Word.getWordById = function (wordId, result) {
   });
 };
 
-Word.getWord = function (word, result) {
-  sql.query("Select id, word from dictionary where word = ? ", word, function (err, res) {             
+Word.validate = function (word, result) {
+  sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, res) {             
     if(err) {
       console.log("error: ", err);
       result(err, null);

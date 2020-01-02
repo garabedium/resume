@@ -2,21 +2,31 @@
 module.exports = function(app) {
   var controller = require('../controllers/controller')
 
+  // Word API Routes:
+  ///////////////////////////////////////////////////  
+
   // Get word by id:
   app.route('/api/word/id/:wordId')
   .get(controller.getWord)
 
-  //  Validate word:
-  app.route('/api/word/:word')
+  // Validate word:
+  app.route('/api/word/validate/:word')
   .get(controller.validateWord)
 
-  // Get Level word
-  app.route('/api/levelWord/:word')
-  .get(controller.getLevelWord)
+  // LevelWord API Routes:
+  ///////////////////////////////////////////////////
 
-  // Get Random Level word
-  app.route('/api/random')
+  // Validate level word
+  app.route('/api/levelWord/validate/:word')
+  .get(controller.validateLevelWord)
+
+  // Get a random LevelWord
+  app.route('/api/levelWord/random')
   .get(controller.getRandomLevelWord)
+
+  // Get random LevelWords based on zipf value:
+  app.route('/api/levelWord/range/:min&:max')
+  .get(controller.getLevelWordsByRange)
 
 }
 
