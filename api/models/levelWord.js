@@ -1,6 +1,7 @@
 'use strict';
 
 const sql = require('./db.js');
+const fs = require('fs');
 
 var LevelWord = function(word){
   this.word = word.word;
@@ -54,5 +55,49 @@ LevelWord.randomByRange = function (min,max,result) {
     }
   });
 };
+
+LevelWord.all = function (result) {
+  sql.query(`SELECT * FROM level_words`,
+    function (err, res) {
+    if(err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      result(null, res);
+      getAnagramCount(res)
+    }
+  });
+};
+
+function getAnagramCount(data){
+  data = JSON.parse(JSON.stringify(data))
+  // sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, res) {             
+  //   if(err) {
+  //     console.log("error: ", err);
+  //     result(err, null);
+  //   } else {
+  //     result(null, res);
+  //   }
+  // });
+  let getPermutations =  function(leafs) {
+    var branches = [];
+    if (leafs.length == 1) return leafs;
+    for (var k in leafs) {
+      var leaf = leafs[k];
+      getPermutations(leafs.join('').replace(leaf, '').split('')).concat("").map(function(subtree) {
+        branches.push([leaf].concat(subtree));
+      });
+    }
+    return branches;
+  };
+
+  let word;
+  let permutations = data.map((obj) => {
+    word = obj.word
+    return getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
+  });
+  
+}
+
 
 module.exports= LevelWord;

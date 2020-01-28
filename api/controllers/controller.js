@@ -43,3 +43,11 @@ exports.getLevelWordsByRange = function(req, res) {
     res.json(word);
   });
 }
+
+exports.anagramCount = function(req, res) {
+  LevelWord.all(function(err, word) {
+    if (err)
+      res.send(err);
+    res.json(word);
+  });
+}
