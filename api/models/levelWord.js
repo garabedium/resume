@@ -71,14 +71,7 @@ LevelWord.all = function (result) {
 
 function getAnagramCount(data){
   data = JSON.parse(JSON.stringify(data))
-  // sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, res) {             
-  //   if(err) {
-  //     console.log("error: ", err);
-  //     result(err, null);
-  //   } else {
-  //     result(null, res);
-  //   }
-  // });
+
   let getPermutations =  function(leafs) {
     var branches = [];
     if (leafs.length == 1) return leafs;
@@ -96,7 +89,14 @@ function getAnagramCount(data){
     word = obj.word
     return getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
   });
-  
+
+  let sets = {}
+  permutations.map( (set,i) => {
+    sets[set[i]] = set.slice(1,set.length)
+  })
+
+  fs.writeFileSync('word-permutation-sets.json', JSON.stringify(sets))
+
 }
 
 
