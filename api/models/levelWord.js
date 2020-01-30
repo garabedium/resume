@@ -71,6 +71,8 @@ LevelWord.all = function (result) {
 
 function getAnagramCount(data){
   data = JSON.parse(JSON.stringify(data))
+  console.log(data.length)
+  data = data.slice(0,1)
 
   let getPermutations =  function(leafs) {
     var branches = [];
@@ -90,12 +92,36 @@ function getAnagramCount(data){
     return getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
   });
 
-  let sets = {}
-  permutations.map( (set,i) => {
-    sets[set[i]] = set.slice(1,set.length)
+  permutations = permutations.slice(0,1)
+  permutations.map(set => {
+    set.map(word => {
+      sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, result) {
+        if(err) return console.log("error: ", err)
+        if (result.length > 0){
+          // console.log(`parent: ${set[0]}, child: ${word}`)
+          setValidWords(set[0],word)
+        }
+      })
+    })
   })
 
-  fs.writeFileSync('word-permutation-sets.json', JSON.stringify(sets))
+  let validWords = {}
+  function setValidWords(parent,child) {
+    if (!validWords[parent]) {
+      validWords[parent] = []
+    } else {
+      if (!validWords[parent].includes(child))
+        validWords[parent].push(child)
+    }
+  }
+
+  // console.log(validWords)
+  // let sets = {}
+  // permutations.map( (set,i) => {
+  //   sets[set[i]] = set.slice(1,set.length)
+  // })
+
+  // fs.writeFileSync('word-permutation-sets.json', JSON.stringify(sets))
 
 }
 
