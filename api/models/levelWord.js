@@ -71,8 +71,7 @@ LevelWord.all = function (result) {
 
 function getAnagramCount(data){
   data = JSON.parse(JSON.stringify(data))
-  console.log(data.length)
-  data = data.slice(0,1)
+  // data = data.slice(0,5)
 
   let getPermutations =  function(leafs) {
     var branches = [];
@@ -92,35 +91,48 @@ function getAnagramCount(data){
     return getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
   });
 
-  permutations = permutations.slice(0,1)
+  // console.log(permutations.length)
+  // permutations = permutations.slice(0,5)
+  // console.log(permutations[0])
   permutations.map(set => {
     set.map(word => {
-      sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, result) {
+      sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, result) {             
         if(err) return console.log("error: ", err)
         if (result.length > 0){
           // console.log(`parent: ${set[0]}, child: ${word}`)
-          setValidWords(set[0],word)
+          checkValidWord(set[0],word)
         }
       })
     })
   })
-
-  let validWords = {}
-  function setValidWords(parent,child) {
-    if (!validWords[parent]) {
-      validWords[parent] = []
-    } else {
-      if (!validWords[parent].includes(child))
-        validWords[parent].push(child)
-    }
+  // let validWords = {}
+  function checkValidWord(levelWord,word) {
+    console.log('adding word...')
+    sql.query("INSERT INTO levelword_anagrams (level_word, word) VALUES (?,?)", [levelWord, word], function(err,result){
+      if (err) return console.log("error: ", err)
+      console.log('success!')
+    })
+    // if (!validWords[parent]) {
+    //   validWords[parent] = []
+    // } else {
+    //   if (!validWords[parent].includes(child))
+    //     validWords[parent].push(child)
+    // }
+    // console.log('--------------------------------')
+    // console.log(validWords)
   }
 
-  // console.log(validWords)
+  // store all anagrams
+  // levelword_anagrams
+    // join of dictionary and level_words
+    // contains all of the anagrams (dictionary words) that belong to a level_word
+
+  // Write to JSON file::
+  /////////////////////////////////////////////////////////////////////////////
   // let sets = {}
   // permutations.map( (set,i) => {
   //   sets[set[i]] = set.slice(1,set.length)
   // })
-
   // fs.writeFileSync('word-permutation-sets.json', JSON.stringify(sets))
 
 }
