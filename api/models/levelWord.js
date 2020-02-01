@@ -2,6 +2,8 @@
 
 const sql = require('./db.js');
 const fs = require('fs');
+const StreamArray = require('stream-json/streamers/StreamArray');
+const {Writable} = require('stream');
 
 var LevelWord = function(word){
   this.word = word.word;
@@ -57,16 +59,45 @@ LevelWord.randomByRange = function (min,max,result) {
 };
 
 LevelWord.all = function (result) {
-  sql.query(`SELECT * FROM level_words`,
-    function (err, res) {
-    if(err) {
-      console.log("error: ", err);
-      result(err, null);
-    } else {
-      result(null, res);
-      getAnagramCount(res)
-    }
-  });
+  let fileStream = fs.createReadStream('./api/word-sets.json')
+  let jsonStream = StreamArray.withParser();
+
+  const processingStream = new Writable({
+    write({key,value}, encoding, callback){
+      // async action / save to db
+      setTimeout(() => {
+        console.log(key)
+        console.log(value);
+        //Next record will be read only current one is fully processed
+        callback();
+    }, 250);      
+    },
+    objectMode:true
+  })
+
+  //Pipe the streams as follows
+  fileStream.pipe(jsonStream.input);
+  jsonStream.pipe(processingStream);
+
+//So we're waiting for the 'finish' event when everything is done.
+  processingStream.on('finish', () => console.log('All done'));
+
+  // readStream.on('open',function(req,res){
+  // readStream.pipe()
+  // })
+  // readStream.on('error', function(err) {
+  //   if (err) return console.log(err)
+  // });  
+  // sql.query(`SELECT * FROM level_words`,
+  //   function (err, res) {
+  //   if(err) {
+  //     console.log("error: ", err);
+  //     result(err, null);
+  //   } else {
+  //     result(null, res);
+  //     getAnagramCount(res)
+  //   }
+  // });
 };
 
 function getAnagramCount(data){
