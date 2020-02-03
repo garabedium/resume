@@ -59,50 +59,21 @@ LevelWord.randomByRange = function (min,max,result) {
 };
 
 LevelWord.all = function (result) {
-  let fileStream = fs.createReadStream('./api/word-sets.json')
-  let jsonStream = StreamArray.withParser();
-
-  const processingStream = new Writable({
-    write({key,value}, encoding, callback){
-      // async action / save to db
-      setTimeout(() => {
-        console.log(key)
-        console.log(value);
-        //Next record will be read only current one is fully processed
-        callback();
-    }, 250);      
-    },
-    objectMode:true
+  sql.query(`SELECT * FROM level_words`,
+    function (err, res) {
+    if(err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      let data = JSON.parse(JSON.stringify(res))
+      data = data.map((obj) => {
+        return obj.word
+      })
+      fs.writeFileSync('./api/level-words.json', JSON.stringify(data))
+    }
   })
-
-  //Pipe the streams as follows
-  fileStream.pipe(jsonStream.input);
-  jsonStream.pipe(processingStream);
-
-//So we're waiting for the 'finish' event when everything is done.
-  processingStream.on('finish', () => console.log('All done'));
-
-  // readStream.on('open',function(req,res){
-  // readStream.pipe()
-  // })
-  // readStream.on('error', function(err) {
-  //   if (err) return console.log(err)
-  // });  
-  // sql.query(`SELECT * FROM level_words`,
-  //   function (err, res) {
-  //   if(err) {
-  //     console.log("error: ", err);
-  //     result(err, null);
-  //   } else {
-  //     result(null, res);
-  //     getAnagramCount(res)
-  //   }
-  // });
-};
-
-function getAnagramCount(data){
-  data = JSON.parse(JSON.stringify(data))
-  // data = data.slice(0,5)
+ 
+  let data = JSON.parse(fs.readFileSync('./api/level-words.json'))
 
   let getPermutations =  function(leafs) {
     var branches = [];
@@ -116,57 +87,15 @@ function getAnagramCount(data){
     return branches;
   };
 
-  let word;
-  let permutations = data.map((obj) => {
-    word = obj.word
-    return getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
-  });
-
-  // console.log(permutations.length)
-  // permutations = permutations.slice(0,5)
-  // console.log(permutations[0])
-  permutations.map(set => {
-    set.map(word => {
-      sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, result) {             
-        if(err) return console.log("error: ", err)
-        if (result.length > 0){
-          // console.log(`parent: ${set[0]}, child: ${word}`)
-          checkValidWord(set[0],word)
-        }
-      })
-    })
+  let sets = data.map((word,i,arr) => {
+    let output = {}
+    let permutations = getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
+    output[word] = permutations
+    return output
   })
-  // let validWords = {}
-  function checkValidWord(levelWord,word) {
-    console.log('adding word...')
-    sql.query("INSERT INTO levelword_anagrams (level_word, word) VALUES (?,?)", [levelWord, word], function(err,result){
-      if (err) return console.log("error: ", err)
-      console.log('success!')
-    })
-    // if (!validWords[parent]) {
-    //   validWords[parent] = []
-    // } else {
-    //   if (!validWords[parent].includes(child))
-    //     validWords[parent].push(child)
-    // }
-    // console.log('--------------------------------')
-    // console.log(validWords)
-  }
 
-  // store all anagrams
-  // levelword_anagrams
-    // join of dictionary and level_words
-    // contains all of the anagrams (dictionary words) that belong to a level_word
-
-  // Write to JSON file::
-  /////////////////////////////////////////////////////////////////////////////
-  // let sets = {}
-  // permutations.map( (set,i) => {
-  //   sets[set[i]] = set.slice(1,set.length)
-  // })
-  // fs.writeFileSync('word-permutation-sets.json', JSON.stringify(sets))
+  fs.writeFileSync('./api/level-words-permutations.json', JSON.stringify(sets))
 
 }
-
 
 module.exports= LevelWord;
