@@ -59,42 +59,30 @@ LevelWord.randomByRange = function (min,max,result) {
 };
 
 LevelWord.all = function (result) {
-  sql.query(`SELECT * FROM level_words`,
-    function (err, res) {
-    if(err) {
-      console.log("error: ", err);
-      result(err, null);
-    } else {
-      let data = JSON.parse(JSON.stringify(res))
-      data = data.map((obj) => {
-        return obj.word
-      })
-      fs.writeFileSync('./api/level-words.json', JSON.stringify(data))
-    }
-  })
- 
-  let data = JSON.parse(fs.readFileSync('./api/level-words.json'))
 
-  let getPermutations =  function(leafs) {
-    var branches = [];
-    if (leafs.length == 1) return leafs;
-    for (var k in leafs) {
-      var leaf = leafs[k];
-      getPermutations(leafs.join('').replace(leaf, '').split('')).concat("").map(function(subtree) {
-        branches.push([leaf].concat(subtree));
-      });
-    }
-    return branches;
-  };
-
-  let sets = data.map((word,i,arr) => {
-    let output = {}
-    let permutations = getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
-    output[word] = permutations
-    return output
+  // READ ANAGRAMS
+  let anagrams = JSON.parse(fs.readFileSync('./api/level-words-permutations.json'))
+  anagrams.map(set =>{
+    set[Object.keys(set)[0]].map((word,i,self) => {
+      validateWord(self[0],word)
+    })
   })
 
-  fs.writeFileSync('./api/level-words-permutations.json', JSON.stringify(sets))
+  // VALIDATE ANAGRAM
+  function validateWord(levelWord,word){
+    sql.query("SELECT id, word FROM dictionary WHERE word = ? ", word, function (err, res) {     
+      if(err) return console.log("error: ", err)
+      if (res.length > 0) insertWord(levelWord,word)
+    })
+  }
+
+  // INSERT VALID ANAGRAM
+  function insertWord(levelWord,word){
+    sql.query("INSERT INTO levelword_anagrams (level_word, word) VALUES (?,?)", [levelWord, word], function(err,result){
+      if (err) return console.log("error: ", err)
+      console.log('success!')
+    })
+  }
 
 }
 
