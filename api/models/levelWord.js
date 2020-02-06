@@ -95,9 +95,9 @@ function buildAnagrams(data){
   // Write to JSON file::
   /////////////////////////////////////////////////////////////////////////////
   let output = []
-  let payload = {}
   permutations.forEach( set => {
     set.forEach(word => {
+      let payload = {}
       payload[set[0]] = word
       output.push(payload)
     });
