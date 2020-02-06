@@ -14,6 +14,6 @@ garabedium.sublime-workspace
 /projects/text-twister/ROADMAP-BUGS.md
 /projects/text-twister/validate-json.js
 /projects/text-twister/dist/svg
-
+/api/level-words-permutations.json
 .DS_STORE
 .env
