@@ -71,7 +71,6 @@ LevelWord.all = function (result) {
 
 function buildAnagrams(data){
   data = JSON.parse(JSON.stringify(data))
-  data = data.slice(0,2)
 
   let getPermutations =  function(leafs) {
     var branches = [];
@@ -91,20 +90,21 @@ function buildAnagrams(data){
     return getPermutations(word.split('')).map(function(str) { return str.join('') }).filter(item => { return item.length >= 3 })
   });
 
-
   // Write to JSON file::
   /////////////////////////////////////////////////////////////////////////////
-  let output = []
+
+  let output = {}
   permutations.forEach( set => {
+    console.log(set[0])
     set.forEach(word => {
-      let payload = {}
-      payload[set[0]] = word
-      output.push(payload)
+      output[word] = set[0]
     });
   })
-  console.log(output.length)
-  console.log(permutations[0].length + permutations[1].length)
-  // fs.writeFileSync('word-permutation-sets--flat.json', JSON.stringify(output))
+  try {
+    fs.writeFileSync('./api/word-permutations-hash.json', JSON.stringify(output))
+  } catch(err) {
+    console.error(err);
+  }
 
 }
 
