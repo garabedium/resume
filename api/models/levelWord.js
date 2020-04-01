@@ -56,6 +56,18 @@ LevelWord.randomByRange = function (min,max,result) {
   });
 };
 
+LevelWord.anagrams = function (word, result) {
+  sql.query(`SELECT * FROM levelword_anagrams WHERE level_word = ? `, word, 
+  function (err, res) {
+    if(err) {
+      console.log("error: ", err);
+      result(err, null);
+    } else {
+      result(null, res);
+    }
+  });
+};
+
 LevelWord.all = function (result) {
   sql.query(`SELECT * FROM level_words`,
     function (err, res) {
