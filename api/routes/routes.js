@@ -28,8 +28,9 @@ module.exports = function(app) {
   app.route('/api/levelWord/range/:min&:max')
   .get(controller.getLevelWordsByRange)
 
-  app.route('/api/levelWord/anagramCount')
-  .get(controller.anagramCount)
+  // Gets LevelWords anagram:
+  app.route('/api/levelWord/anagrams/:word')
+  .get(controller.getLevelWordAnagrams)
 
 
 }
