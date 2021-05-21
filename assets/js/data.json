@@ -76,7 +76,7 @@
       "title": "Text Twister",
       "images": ["assets/images/project-text-twister@desktop.png"],
       "titleShort":"amobikes",
-      "role": ["Anagram puzzle game","React + Express + MySQL"],
+      "role": ["React + Express + MySQL","Built dictionary APIs","Designed fully responsive UI"],
       "description": "Anagram puzzle game where players unscramble letters and solve words before time runs out.",
       "url":"http://text-twister.garabedium.com/"
     },
