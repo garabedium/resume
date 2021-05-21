@@ -17,19 +17,19 @@
       "title": "Software Engineer",
       "location": "Boston",
       "dates": "2018 - Present",
-      "description": "Fullstack software engineer (Rails, AngularJS, MySQL).",
+      "description": "Full-Stack software engineer (Rails, AngularJS, MySQL).",
       "url":"https://carnow.com/"
     },
     {
       "employer": "Launch Academy",
-      "title": "Jr. Full-stack Web Developer",
+      "title": "Jr. Full-Stack Software Engineer",
       "location": "Boston",
       "dates": "2018",
       "description": "Graduated from Launch Academy's 18-week Full-stack programming bootcamp.",
       "url":"https://launchacademy.com/"
     },
     {
-      "employer": "Freelance Web Developer",
+      "employer": "Freelance Frontend Developer",
       "title": "@Self-Employed",
       "location": "Boston, Brazil",
       "dates": "2012 - 2018",
@@ -38,7 +38,7 @@
     },
     {
       "employer": "Sampa Housing",
-      "title": "Tech & Marketing Director",
+      "title": "Frontend Developer",
       "location": "Sao Paulo, Brazil",
       "dates": "2012 - 2015",
       "description": "Managed website. Designed and developed property lead generation site",
@@ -73,21 +73,20 @@
   ],
   "projects": [
     {
+      "title": "Text Twister",
+      "images": ["assets/images/project-text-twister@desktop.png"],
+      "titleShort":"amobikes",
+      "role": ["Anagram puzzle game","React + Express + MySQL"],
+      "description": "Anagram puzzle game where players unscramble letters and solve words before time runs out.",
+      "url":"http://text-twister.garabedium.com/"
+    },
+    {
       "title": "Ace the Interview",
       "images": ["assets/images/project-ace-the-interview@desktop.png"],
       "titleShort":"amobikes",
       "role": ["Designed site","Built React frontend","Built Rails backend"],
       "description": "Capstone 'breakable toy' project for Launch Academy. React on Rails app to prep for job interview questions.",
       "url":"https://acetheinterview.herokuapp.com/"
-    },    
-    {
-      "title": "Dandara Careers",
-      "images": ["assets/images/project-dandara-large@desktop.jpg"],
-      "dates": "2014",
-      "titleShort":"dandara",
-      "role": ["ExpressionEngine integration","Limited front-end development with <a href='http://killerbyt.es/' target='_blank' title='KillerBytes'>KillerBytes</a>"],
-      "description": "Careers site where users can search for and apply for jobs. Search by categories",
-      "url":"http://dandaracareers.com/"
     },
     {
       "title": "FTE Leaders",
