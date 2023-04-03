@@ -86,7 +86,7 @@
       "titleShort":"amobikes",
       "role": ["Designed site","Built React frontend","Built Rails backend"],
       "description": "Capstone 'breakable toy' project for Launch Academy. React on Rails app to prep for job interview questions.",
-      "url":"https://acetheinterview.herokuapp.com/"
+      "url":"https://github.com/garabedium/ace-the-interview"
     },
     {
       "title": "FTE Leaders",

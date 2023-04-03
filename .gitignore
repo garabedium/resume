@@ -17,3 +17,4 @@ garabedium.sublime-workspace
 /api/level-words-permutations.json
 .DS_STORE
 .env
+.vscode/
