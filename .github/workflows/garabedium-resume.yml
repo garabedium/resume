@@ -1,0 +1,32 @@
+name: Garabedium Deploy
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy_production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the latest code
+        uses: actions/checkout@v3
+      - name: Set up node
+        uses: actions/setup-node@master
+      - name: Install dependencies and build project
+        run: |
+          npm install
+          npm run build
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_GARABEDIUM_PRIVATE_KEY }}
+          ARGS: >-
+            --exclude='.git'
+            --exclude='src/'
+            --exclude='node_modules/'
+          REMOTE_USER: ${{ secrets.SSH_GARABEDIUM_USER }}
+          REMOTE_HOST: ${{ secrets.SSH_GARABEDIUM_HOST }}
+          REMOTE_PORT: ${{ secrets.SSH_GARABEDIUM_PORT }} -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa
+          TARGET: ${{ secrets.GARABEDIUM_DEPLOY_PATH }} 
